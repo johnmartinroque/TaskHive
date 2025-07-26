@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+@import url("https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600&family=Noto+Sans+JP:wght@100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cssanimation.io/css/cssanimation.min.css");
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Roboto Condensed", sans-serif !important;
+  text-transform: uppercase;
+  /* color: #f6f6f6 !important; */
+}
+
+.main-content {
+  padding-top: 5.625rem;
+  padding-left: 7.1rem;
+}

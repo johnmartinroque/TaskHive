@@ -1,0 +1,59 @@
+#group-tasks{
+  margin: none !important;
+  padding: none !important;
+}
+
+#group-tasks h1{
+  text-align: left;
+  color: #f6f6f6;
+  font-weight: 600;
+}
+
+#task-card{
+  height: 21rem ;
+  overflow-y: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+#choose-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+}
+
+#choose-group h4 a{
+    text-decoration: none;
+    color: #f6f6f6;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+#group-dropdown {
+    padding: 0.5rem;
+    position: relative;
+}
+
+#group-drop{
+  background-color: #1f1f1f;
+  padding: .6rem;
+  margin-left: -8rem !important;
+  margin-top: .5rem !important;
+  width: 10rem;
+  color: #f6f6f6;
+}
+
+#group-drop .dropdown-item{
+  color: #f6f6f6;
+  background-color: #1f1f1f;
+  border-radius: .5rem;
+  padding: .6rem;
+  transition: background-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
+}
+
+#group-drop .dropdown-item:hover{
+  color: #f6f6f6;
+  background-color: #393939;
+  padding: .6rem;
+}

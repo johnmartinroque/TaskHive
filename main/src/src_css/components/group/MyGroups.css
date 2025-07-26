@@ -1,0 +1,44 @@
+#my-groups{
+    margin: none !important;
+    padding: none !important;
+}
+
+#my-groups h1{
+  text-align: left;
+  color: #f6f6f6;
+  font-weight: 600;
+}
+
+.group-card {
+  padding: 1rem 1rem 0rem 1rem;
+  max-width: 31.25rem;
+  text-align: center;
+  border-radius: 1.2rem !important;
+  background-color: #1f1f1f !important;
+  min-height: 9rem;
+}
+
+.group-card h3 {
+  margin-bottom: 0.625rem;
+  color: #f6f6f6 !important;
+}
+
+.group-link {
+  transition: 0.2s ease-in-out ;
+  text-decoration: none;
+  color: #f6f6f6;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.group-link:hover{
+    transform: scale(1.02);
+}
+
+.group-link:active{
+    transform: scale(1);
+}

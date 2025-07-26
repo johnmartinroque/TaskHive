@@ -1,0 +1,17 @@
+.group-detailed-wrapper{
+  padding: 2rem 5rem;
+}
+
+h1 {
+  font-weight: 600;
+  margin-bottom: 2.75rem !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #f6f6f6 !important;
+}
+
