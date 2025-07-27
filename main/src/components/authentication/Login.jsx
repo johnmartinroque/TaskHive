@@ -123,6 +123,8 @@ function Login() {
               />
             </div>
             <Button onClick={userLogin}>Log in</Button>
+            <h4>Don't have an account?</h4>
+            <Button onClick={() => navigate('/register')}>Register</Button>
           </Col>
         </Row>
 

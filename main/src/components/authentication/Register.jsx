@@ -118,6 +118,8 @@ function Register() {
               />
             </div>
             <Button onClick={registerUser}>Register</Button>
+            <h4>Already have an account?</h4>
+            <Button onClick={() => navigate('/login')}>Login</Button>
             {errorMessage && <p className="text-danger mt-2">{errorMessage}</p>}
           </Col>
         </Row>

@@ -6,6 +6,7 @@ import Home from "./screens/Home";
 import "bootstrap-icons/font/bootstrap-icons.css";
 
 import LoginPage from "./screens/LoginPage";
+import RegisterPage from "./screens/RegisterPage";
 import GroupDetailed from "./screens/GroupDetailed";
 import Profile from "./screens/Profile";
 import TaskDetailed from "./screens/TaskDetailed";
@@ -23,6 +24,7 @@ function App() {
         <div className="main-content">
           <Routes>
             <Route path="/login" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
             <Route path="/landing" element={<LandingPage />} />
             {/* 🔒 Protected Routes */}
             <Route
