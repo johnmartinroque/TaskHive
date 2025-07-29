@@ -34,8 +34,7 @@ function GroupTasks() {
   if (isLoading) return <Spinner animation="border" variant="primary" />;
 
   return (
-    <div className="group-task">
-      <h1>Group Tasks</h1>
+    <div className="group-task" > 
       {tasks.length === 0 ? (
         <p>No tasks found for this group.</p>
       ) : (
@@ -52,16 +51,8 @@ function GroupTasks() {
                   <p><strong>Date Posted:</strong> {task.datePosted}</p>
                   {/* {deadline ? <p className="task-dead">Deadline: {deadline}</p> : <> <p className="task-dead">No deadline</p></>} */}
                   <p className="group-task-progress"><strong>Progress:</strong> {task.progress}</p>
-                  <p className="group-task-created"><strong>Created By:</strong>{task.createdBy}</p>
-                  {/* <Card.Text >
-                    <strong>Description:</strong> {task.description}
-                    <br />
-                    <strong>Date Posted:</strong> {task.datePosted}
-                    <br />
-                    <strong>Progress:</strong> {task.progress}
-                    <br />
-                    <strong>Created By:</strong> {task.createdBy}
-                  </Card.Text> */}
+                  <p className="group-task-created"><strong>Created By:</strong> {task.createdBy}</p>
+                  
                 </Card.Body>
               </Card>
               </Link>

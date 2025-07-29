@@ -7,13 +7,17 @@ function LeaveGroup({ show, onClose, onConfirm, name }) {
       <Modal.Header closeButton>
         <Modal.Title>{name}</Modal.Title>
       </Modal.Header>
-      <Modal.Body>{"something"}</Modal.Body>
+      <Modal.Body>{"Are you sure you want to leave?"}</Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
-          Cancel
+        <Button variant="danger" onClick={onClose}
+          style={{scale:"0.8", marginRight:'-1rem', color:'#1f1f1f'}}
+          id="buttones">
+          <h4>Cancel</h4>
         </Button>
-        <Button variant="danger" onClick={onConfirm}>
-          Leave Group
+        <Button variant="warning" onClick={onConfirm} 
+          style={{scale:"0.8"}}
+          id="buttones">
+          <h4>Leave Group</h4>
         </Button>
       </Modal.Footer>
     </Modal>
