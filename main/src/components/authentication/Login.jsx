@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
-
+import "../../src_css/components/authentication/Login.css";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -80,8 +80,8 @@ function Login() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5">
-      <div className="bg-white rounded p-4 shadow" style={{ width: "40rem" }}>
+    <div className="d-flex justify-content-center">
+      <div  id="login">
         <Row>
           <Col>
             {loading ? (
@@ -92,19 +92,23 @@ function Login() {
               <></>
             )}
             <h1>Login</h1>
-
-            {/* 🔸 Error message display */}
             {errorMessage && (
-              <div className="alert alert-danger py-2">{errorMessage}</div>
+              <div style={{borderRadius:"3rem", marginTop:"-1.5rem"}} className="alert alert-danger mb-4">{errorMessage}</div>
             )}
-
+            
             <div className="mb-3">
               <label htmlFor="email" className="form-label">
-                Email address
+               <h3>Email Address</h3>
               </label>
               <input
+                id="container"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    userLogin();
+                  }
+                }}
                 type="email"
                 className="form-control"
                 placeholder="name@example.com"
@@ -112,27 +116,34 @@ function Login() {
             </div>
             <div className="mb-3">
               <label htmlFor="textarea" className="form-label">
-                Password
+                <h3>Password</h3>
               </label>
               <input
+                id="container"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    userLogin();
+                  }
+                }}
                 className="form-control"
                 placeholder="Your password"
                 type="password"
               />
             </div>
-            <Button onClick={userLogin}>Log in</Button>
-            <h4>Don't have an account?</h4>
-            <Button onClick={() => navigate('/register')}>Register</Button>
+            <button id="main-way" onClick={userLogin}>
+              <strong>Log in </strong>
+            </button>
+              <h4 style={{textAlign:"center", margin:"1rem"}}>Or</h4>
+            <button id="main-way" onClick={googleLogin}>
+              <strong>Log in with Google</strong>
+            </button>
+            <button id="other-way" onClick={() => navigate('/register')}>
+              <strong>Register</strong>
+            </button>
           </Col>
         </Row>
-
-        <div className="mt-3">
-          <Button variant="outline-primary" onClick={googleLogin}>
-            Login with Google
-          </Button>
-        </div>
       </div>
     </div>
   );

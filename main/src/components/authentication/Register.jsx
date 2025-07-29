@@ -68,7 +68,7 @@ function Register() {
 
   return (
     <div className="d-flex justify-content-center mt-5">
-      <div className="bg-white rounded p-4 shadow" style={{ width: "40rem" }}>
+      <div id="login">
         <Row>
           <Col>
             {loading ? (
@@ -79,48 +79,87 @@ function Register() {
               <></>
             )}
             <h1>Register</h1>
+            {errorMessage && (
+              <div style={{borderRadius:"3rem", marginTop:"-1.5rem", fontWeight:"600"}} className="alert alert-danger mb-4">{errorMessage}</div>
+            )}
+            
             <div className="mb-3">
-              <label className="form-label">Full Name</label>
+              <label className="form-label">
+                <h3>Full Name</h3>
+              </label>
               <input
+                id="container"
                 type="text"
                 className="form-control"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    registerUser();
+                  }
+                }}
                 placeholder="Enter your name"
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Email address</label>
+              <label className="form-label">
+                <h3>Email Address</h3>
+              </label>
               <input
+                id="container"
                 type="email"
                 className="form-control"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    registerUser();
+                  }
+                }}
                 placeholder="name@example.com"
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Password</label>
+              <label className="form-label">
+                <h3>Password</h3>
+              </label>
               <input
+                id="container"
                 type="password"
                 className="form-control"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    registerUser();
+                  }
+                }}
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">Confirm Password</label>
+              <label className="form-label">
+                <h3>Confirm Password</h3>
+              </label>
               <input
+                id="container"
                 type="password"
                 className="form-control"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') {
+                    registerUser();
+                  }
+                }}
               />
             </div>
-            <Button onClick={registerUser}>Register</Button>
-            <h4>Already have an account?</h4>
-            <Button onClick={() => navigate('/login')}>Login</Button>
-            {errorMessage && <p className="text-danger mt-2">{errorMessage}</p>}
+            <button id="main-way" onClick={registerUser}>
+              <strong>Register</strong>
+            </button>
+              <h4 style={{textAlign:"center", margin:"1rem"}}>Or</h4>
+            <button id="other-way" onClick={() => navigate('/login')}>
+              <strong>Login</strong>
+            </button>
           </Col>
         </Row>
       </div>
