@@ -42,7 +42,7 @@ function FinishedTasks() {
   return (
     <div className="text-end container">
       <h1 className="text-end mb-4">Finished Tasks</h1>
-      <div className="row justify-content-end" style={{marginTop:"3.5rem"}}>
+      <div className="row justify-content-end">
         {finishedTasks.map((task) => (
           <Link to={`/tasks/${task.id}`} key={task.id} className="col-md-6 mb-4 d-flex justify-content-end task-link">
             <Card className="p-3 w-100" style={{ maxWidth: "22rem", backgroundColor: "#1f1f1f", boxShadow: "inset 0px -2px 6px -2px rgba(0, 0, 0, 0.26)", }}>

@@ -99,21 +99,23 @@ function Invitations() {
 
   return (
     <div className="mt-4">
-      <h4>Group Invitations</h4>
-      <ListGroup>
+      <h1>Group Invitations</h1>
+      <ListGroup style={{borderRadius:"1.2rem"}}>
         {invitations.map((invite) => (
           <ListGroup.Item
             key={invite.id}
             className="d-flex justify-content-between align-items-center"
+            style={{backgroundColor:"#1f1f1f", border:"none", padding:"1rem", color:"#f6f6f6"}}
           >
             <div>
-              <strong>{invite.groupName}</strong>
-              <div className="text-muted small">
+              <h4>{invite.groupName}</h4>
+              <div className="text-muted" style={{marginLeft:'1rem'}}>
                 You’ve been invited to join
               </div>
             </div>
             <div>
               <Button
+                style={{borderRadius:"1.2rem", padding:".5rem"}}
                 variant="success"
                 size="sm"
                 className="me-2"
@@ -122,6 +124,7 @@ function Invitations() {
                 ✔ Accept
               </Button>
               <Button
+                style={{borderRadius:"1.2rem", padding:".5rem"}}
                 variant="danger"
                 size="sm"
                 onClick={() => declineInvitation(invite.id)}
