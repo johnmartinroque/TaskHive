@@ -78,7 +78,7 @@ function Invitations() {
         }
       }
 
-      await removeInvitation(invite.id); // delete after accepting
+      await removeInvitation(invite.id);
       navigate(`/group/${invite.groupId}`);
     } catch (err) {
       console.error("Failed to accept invitation:", err);
@@ -87,7 +87,7 @@ function Invitations() {
 
   const declineInvitation = async (inviteId) => {
     try {
-      await removeInvitation(inviteId); // delete after declining
+      await removeInvitation(inviteId);
     } catch (err) {
       console.error("Failed to decline invitation:", err);
     }

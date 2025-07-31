@@ -10,7 +10,7 @@ function ProtectedRoute({ children }) {
   useEffect(() => {
     const auth = getAuth();
     const unsubscribe = onAuthStateChanged(auth, (user) => {
-      setIsAuthenticated(!!user); // true if user exists
+      setIsAuthenticated(!!user);
       setLoading(false);
     });
 
@@ -22,7 +22,7 @@ function ProtectedRoute({ children }) {
       <p>
         <Spinner />
       </p>
-    ); // or a spinner
+    );
   }
 
   return isAuthenticated ? children : <Navigate to="/landing" replace />;

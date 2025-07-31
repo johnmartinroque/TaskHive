@@ -21,15 +21,13 @@ function Login() {
       const result = await signInWithPopup(auth, googleProvider);
       const user = result.user;
 
-      // Check if user doc already exists in Firestore
       const userDocRef = doc(db, "users", user.uid);
       const userDoc = await getDoc(userDocRef);
 
       if (!userDoc.exists()) {
-        // 👇 Create user doc if it doesn't exist
         await setDoc(userDocRef, {
           uid: user.uid,
-          name: user.displayName || "", // fallback if displayName is null
+          name: user.displayName || "",
           email: user.email,
           createdAt: serverTimestamp(),
         });
@@ -124,7 +122,7 @@ function Login() {
             </div>
             <Button onClick={userLogin}>Log in</Button>
             <h4>Don't have an account?</h4>
-            <Button onClick={() => navigate('/register')}>Register</Button>
+            <Button onClick={() => navigate("/register")}>Register</Button>
           </Col>
         </Row>
 
