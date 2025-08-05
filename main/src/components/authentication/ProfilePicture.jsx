@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
-import { updateProfile } from "firebase/auth";
-import { doc, updateDoc } from "firebase/firestore";
+import { doc, updateDoc, getDoc } from "firebase/firestore";
+import { Button } from "react-bootstrap";
 
 function ProfilePicture() {
-  const [selectedAvatar, setSelectedAvatar] = useState("/images/avatar1.jpeg"); // default avatar
-
+  const [selectedAvatar, setSelectedAvatar] = useState("/images/avatar1.jpeg");
+  const [currentAvatar, setCurrentAvatar] = useState(null); // currently saved avatar
+  const [currentUserId, setCurrentUserId] = useState(null);
   const navigate = useNavigate();
 
   const avatars = [
@@ -17,18 +18,63 @@ function ProfilePicture() {
     "/images/avatar5.jpeg",
   ];
 
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (user) {
+      setCurrentUserId(user.uid);
+      const fetchAvatar = async () => {
+        const docRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(docRef);
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          if (data.profilePicture) {
+            setSelectedAvatar(data.profilePicture); // also set preview
+            setCurrentAvatar(data.profilePicture); // track saved version
+          }
+        }
+      };
+      fetchAvatar();
+    }
+  }, []);
+
+  const handleAvatarSelect = (avatar) => {
+    setSelectedAvatar(avatar);
+  };
+
+  const handleSubmit = async () => {
+    if (selectedAvatar === currentAvatar) {
+      alert("No changes made.");
+      return;
+    }
+
+    if (currentUserId) {
+      try {
+        const userDocRef = doc(db, "users", currentUserId);
+        await updateDoc(userDocRef, {
+          profilePicture: selectedAvatar,
+        });
+        setCurrentAvatar(selectedAvatar); // update current after save
+        alert("Profile picture updated!");
+      } catch (error) {
+        console.error("Failed to update profile picture:", error);
+        alert("Something went wrong.");
+      }
+    }
+  };
+
   return (
     <div className="mb-3">
       <label className="form-label">
         <h3>Select Profile Picture</h3>
       </label>
+
       <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
         {avatars.map((avatar, index) => (
           <img
             key={index}
             src={avatar}
             alt={`avatar${index + 1}`}
-            onClick={() => setSelectedAvatar(avatar)}
+            onClick={() => handleAvatarSelect(avatar)}
             style={{
               width: "80px",
               height: "80px",
@@ -40,7 +86,25 @@ function ProfilePicture() {
           />
         ))}
       </div>
+
+      <Button onClick={handleSubmit}>SUBMIT</Button>
+
+      <div style={{ marginTop: "1rem" }}>
+        <strong>Selected Picture Preview:</strong>
+      </div>
+      <img
+        src={selectedAvatar}
+        alt="Selected Avatar"
+        style={{
+          width: "100px",
+          height: "100px",
+          borderRadius: "50%",
+          border: "2px solid black",
+          marginTop: "0.5rem",
+        }}
+      />
     </div>
   );
 }
+
 export default ProfilePicture;

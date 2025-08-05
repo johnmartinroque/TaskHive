@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../firebase";
 import "../src_css/components/Header.css";
 import HiveTaskLogo from "./HiveTaskLogo.png";
+import UserAvatar from "./authentication/UserAvatar";
 
 function Header() {
   const [user, setUser] = useState(null);
@@ -97,6 +98,7 @@ function Header() {
 
               {user && (
                 <div className="search-form d-flex" id="rightest">
+                  <UserAvatar size={40} />
                   <h5>{user.displayName || user.email}</h5>
                   <li className="nav-link active dropdown" id="last-main">
                     <Link
