@@ -7,6 +7,8 @@ import {
   query,
   orderBy,
   where,
+  doc,
+  getDoc,
 } from "firebase/firestore";
 import { db } from "../../../firebase";
 import { Filter } from "bad-words";
@@ -49,6 +51,10 @@ function Chat({ groupId, groupMembers }) {
       return;
     }
 
+    const userDocRef = doc(db, "users", currentUser.uid);
+    const userSnap = await getDoc(userDocRef);
+    const userData = userSnap.exists() ? userSnap.data() : {};
+
     const filter = new Filter();
     const cleanedMessage = filter.clean(newMessage);
 
@@ -58,6 +64,7 @@ function Chat({ groupId, groupMembers }) {
       groupId,
       userId: currentUser.uid,
       userName: userInGroup.name || "Anonymous",
+      profilePicture: userData.profilePicture || "/images/default-avatar.jpeg", // ✅ add this
     });
 
     setNewMessage("");
@@ -70,8 +77,33 @@ function Chat({ groupId, groupMembers }) {
       </div>
       <div className="messages">
         {messages.map((message) => (
-          <div key={message.id} className="message">
-            <span className="user">{message.userName}:</span> {message.text}
+          <div
+            key={message.id}
+            className="message"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
+              marginBottom: "0.5rem",
+            }}
+          >
+            <img
+              src={message.profilePicture || "/images/default-avatar.jpeg"}
+              alt="avatar"
+              style={{
+                width: "32px",
+                height: "32px",
+                borderRadius: "50%",
+                objectFit: "cover",
+                border: "1px solid #ccc",
+              }}
+            />
+            <div>
+              <span className="user" style={{ fontWeight: "bold" }}>
+                {message.userName}:
+              </span>{" "}
+              {message.text}
+            </div>
           </div>
         ))}
       </div>
