@@ -26,6 +26,7 @@ function GroupDetailed() {
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [memberToRemove, setMemberToRemove] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const [isChatMinimized, setIsChatMinimized] = useState(true);
 
   const navigate = useNavigate();
 
@@ -174,17 +175,11 @@ function GroupDetailed() {
       />
 
       <Row>
-        <Col>
+        <Col style={{backgroundColor:"red"}}>
           <AddTask groupId={group.id} groupName={group.groupName} />
         </Col>
-        <Col>
-          <Chat groupId={group.id} groupMembers={group.members} />
-          {isAdmin && (
-            <>
-              <JoinRequests group={group} setGroup={setGroup} />
-              <InviteMembers group={group} />
-            </>
-          )}
+        <Col style={{backgroundColor:"blue"}}>
+        <Graph selectedGroupId={group.id} />
         </Col>
       </Row>
 
@@ -230,7 +225,7 @@ function GroupDetailed() {
         name={memberToRemove?.name || "this member"}
       />
 
-      <Graph selectedGroupId={group.id} />
+      <Chat groupId={group.id} groupMembers={group.members} />
     </div>
   );
 }

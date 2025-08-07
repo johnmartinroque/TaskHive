@@ -80,8 +80,9 @@ function ProfilePicture() {
               height: "80px",
               borderRadius: "50%",
               cursor: "pointer",
+              objectFit: "cover",
               border:
-                selectedAvatar === avatar ? "3px solid blue" : "2px solid gray",
+                selectedAvatar === avatar ? "3px solid #ff8307ff" : "2px solid gray",
             }}
           />
         ))}
@@ -100,6 +101,7 @@ function ProfilePicture() {
           height: "100px",
           borderRadius: "50%",
           border: "2px solid black",
+          objectFit: "cover",
           marginTop: "0.5rem",
         }}
       />

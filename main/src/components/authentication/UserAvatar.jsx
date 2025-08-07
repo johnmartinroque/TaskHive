@@ -38,7 +38,8 @@ function UserAvatar({ size = 40, rounded = true, style = {} }) {
       style={{
         width: `${size}px`,
         height: `${size}px`,
-        objectFit: "cover",
+        objectFit: "fill",
+        aspectRatio: "1 / 1",
         borderRadius: rounded ? "50%" : "8px",
         ...style,
       }}
