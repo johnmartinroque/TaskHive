@@ -53,8 +53,9 @@ function ProfilePicture() {
         await updateDoc(userDocRef, {
           profilePicture: selectedAvatar,
         });
-        setCurrentAvatar(selectedAvatar); // update current after save
+        setCurrentAvatar(selectedAvatar);
         alert("Profile picture updated!");
+        window.location.reload();
       } catch (error) {
         console.error("Failed to update profile picture:", error);
         alert("Something went wrong.");
