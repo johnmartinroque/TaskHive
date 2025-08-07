@@ -86,21 +86,23 @@
 }
 
 #last-main{
-  background-color: #1f1f1f;
+    background-color: #1f1f1f;
     border-radius: 10rem;
-    padding: .3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .1rem;
     height: 3.8rem;
     width: 3.8rem;
     border: none;
     color: #f6f6f6;
     border-radius: 50%;
     aspect-ratio: 1 / 1;
-    font-size: x-large !important;
     transition: background-color 0.2s ease-in-out;
 }
 
 #last-main:hover {
-  background-color: #393939;
+  background-color: #ff8307ff;
 }
 
 #last-main:active{

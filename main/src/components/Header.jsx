@@ -98,16 +98,17 @@ function Header() {
 
               {user && (
                 <div className="search-form d-flex" id="rightest">
-                  <UserAvatar size={40} />
                   <h5>{user.displayName || user.email}</h5>
                   <li className="nav-link active dropdown" id="last-main">
                     <Link
-                      className="nav-link bi bi-person"
+                      className="nav-link"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
-                    ></Link>
+                    >
+                      <UserAvatar size={55} />
+                    </Link>
                     <ul className="dropdown-menu" id="draop">
                       <li>
                         <Link className="dropdown-item" to="/profile">
@@ -115,10 +116,7 @@ function Header() {
                         </Link>
                       </li>
                       <li>
-                        <button
-                          className="dropdown-item"
-                          onClick={handleLogout}
-                        >
+                        <button className="dropdown-item" onClick={handleLogout}>
                           Logout
                         </button>
                       </li>

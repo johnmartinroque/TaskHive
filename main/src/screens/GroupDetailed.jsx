@@ -26,6 +26,7 @@ function GroupDetailed() {
   const [showRemoveModal, setShowRemoveModal] = useState(false);
   const [memberToRemove, setMemberToRemove] = useState(null);
   const [isPending, setIsPending] = useState(false);
+  const [isChatMinimized, setIsChatMinimized] = useState(true);
 
   const navigate = useNavigate();
 
@@ -179,12 +180,6 @@ function GroupDetailed() {
         </Col>
         <Col>
           <Chat groupId={group.id} groupMembers={group.members} />
-          {isAdmin && (
-            <>
-              <JoinRequests group={group} setGroup={setGroup} />
-              <InviteMembers group={group} />
-            </>
-          )}
         </Col>
       </Row>
 
