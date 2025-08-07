@@ -43,7 +43,7 @@ function ProfilePicture() {
 
   const handleSubmit = async () => {
     if (selectedAvatar === currentAvatar) {
-      alert("No changes made.");
+      // alert("No changes made.");
       return;
     }
 
@@ -54,11 +54,11 @@ function ProfilePicture() {
           profilePicture: selectedAvatar,
         });
         setCurrentAvatar(selectedAvatar);
-        alert("Profile picture updated!");
+        // alert("Profile picture updated!");
         window.location.reload();
       } catch (error) {
         console.error("Failed to update profile picture:", error);
-        alert("Something went wrong.");
+        // alert("Something went wrong.");
       }
     }
   };
