@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import { doc, updateDoc, getDoc } from "firebase/firestore";
-import { Button } from "react-bootstrap";
+import { Button } from "react-bootstrap"; 
 
 function ProfilePicture() {
   const [selectedAvatar, setSelectedAvatar] = useState("/images/avatar1.jpeg");
@@ -69,7 +69,7 @@ function ProfilePicture() {
         <h3>Select Profile Picture</h3>
       </label>
 
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", justifyContent:"center" }}>
         {avatars.map((avatar, index) => (
           <img
             key={index}
@@ -89,9 +89,9 @@ function ProfilePicture() {
         ))}
       </div>
 
-      <Button onClick={handleSubmit}>SUBMIT</Button>
+      <button id="main-way" style={{width:"13rem", marginTop:"1rem"}} onClick={handleSubmit}>SUBMIT</button>
 
-      <div style={{ marginTop: "1rem" }}>
+      {/* <div style={{ marginTop: "1rem" }}>
         <strong>Selected Picture Preview:</strong>
       </div>
       <img
@@ -105,7 +105,7 @@ function ProfilePicture() {
           objectFit: "cover",
           marginTop: "0.5rem",
         }}
-      />
+      /> */}
     </div>
   );
 }

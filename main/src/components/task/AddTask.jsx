@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { auth, db } from "../../firebase";
 import { Alert, Button, Col, Container, Row, Spinner } from "react-bootstrap";
 import { onAuthStateChanged } from "firebase/auth";
+import "../../src_css/components/task/AddTask.css";
 
 function AddTask(props) {
   const { fetchNewTasks, groupId, groupName } = props;
@@ -91,7 +92,8 @@ function AddTask(props) {
   }, []);
 
   return (
-    <div className="d-flex justify-content-center align-items-center vh-95 bg-light">
+    <div className="add-task-container">
+      <h1>Add New Task</h1>
       <Container className="text-center ">
         {isLoading && (
           <div role="status" className="mb-3">
@@ -105,6 +107,7 @@ function AddTask(props) {
           <>
             <input
               type="text"
+              id="container"
               placeholder="Task Name"
               value={newName}
               onChange={(e) => setNewName(e.target.value)}
@@ -112,19 +115,25 @@ function AddTask(props) {
             />
             <textarea
               placeholder="Task Description"
+              id="container-description"
               value={newDescription}
               onChange={(e) => setNewDescription(e.target.value)}
               rows={4}
               className="form-control mb-3"
             />
-            <label className="mb-1">Optional Deadline</label>
+            <label htmlFor="textarea" className="form-label">
+              <h4>Optional Deadline</h4>
+            </label>
             <input
+              id="container"
               type="datetime-local"
               value={newDeadline}
               onChange={(e) => setNewDeadline(e.target.value)}
               className="form-control mb-3"
             />
-            <Button onClick={addTask}>SUBMIT</Button>
+            <button id="main-way" onClick={addTask}>
+              <strong>SUBMIT</strong>
+            </button>
           </>
         )}
       </Container>

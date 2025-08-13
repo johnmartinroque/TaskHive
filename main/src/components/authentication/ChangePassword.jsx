@@ -54,7 +54,7 @@ function ChangePassword() {
           <Col>
             <h1 style={{ fontWeight: "600" }}>Change Password</h1>
             <div className="mb-3">
-              <label className="form-label">Current Password</label>
+              <p style={{color:"white"}} className="form-label">Current Password</p>
               <input
                 style={{
                   borderRadius: "10rem",
@@ -70,7 +70,7 @@ function ChangePassword() {
               />
             </div>
             <div className="mb-3">
-              <label className="form-label">New Password</label>
+              <p style={{color:"white"}} className="form-label">New Password</p>
               <input
                 style={{
                   borderRadius: "10rem",
@@ -85,12 +85,12 @@ function ChangePassword() {
                 placeholder="New Password"
               />
             </div>
-            <Button
-              style={{ padding: ".7rem", marginTop: "1rem" }}
+            <button
+              id="main-way"
               onClick={handleChangePassword}
             >
               Change Password
-            </Button>
+            </button>
             {message && <p className="mt-2 text-danger">{message}</p>}
           </Col>
         </Row>

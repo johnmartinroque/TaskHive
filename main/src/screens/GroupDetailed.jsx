@@ -175,10 +175,10 @@ function GroupDetailed() {
       />
 
       <Row>
-        <Col style={{backgroundColor:"red"}}>
+        <Col>
           <AddTask groupId={group.id} groupName={group.groupName} />
         </Col>
-        <Col style={{backgroundColor:"blue"}}>
+        <Col>
         <Graph selectedGroupId={group.id} />
         </Col>
       </Row>

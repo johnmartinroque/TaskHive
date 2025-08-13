@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate, useLocation } from "react-router-dom";
 
 import { deleteDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import { Card, Container, Button, Spinner } from "react-bootstrap";
@@ -16,6 +16,8 @@ function TaskDetailed() {
   const [showDeleteModal, setShowDeleteModal] = useState(false);
   const auth = getAuth();
   const currentUser = auth.currentUser;
+  const navigate = useNavigate();
+  const location = useLocation();
   const fetchTask = async () => {
     try {
       const taskDoc = await getDoc(doc(db, "tasks", taskId));
@@ -90,6 +92,13 @@ function TaskDetailed() {
           progress === "Finished" && currentUser ? currentUser.email : "",
       });
       fetchTask();
+      if (location.state?.from) {
+        navigate(location.state.from);
+      } else if (task?.groupId) {
+        navigate(`/group/${task.groupId}`);
+      } else {
+        navigate("/");
+      }
     } catch (err) {
       console.error(err);
     }
@@ -105,31 +114,31 @@ function TaskDetailed() {
       <Card style={{textAlign: "center", borderRadius: "1.2rem", backgroundColor: "#1f1f1f", padding:"1.5rem", width:"70vh"}}>
         <Card.Body>
           <h1 style={{marginBottom: "1rem", color: "#f6f6f6"}}>{task.name}</h1>
-          <Card.Subtitle className="mb-2 text-muted">
+          <Card.Subtitle className="mb-2" style={{color: "#f6f6f6"}}>
             Posted on: {formattedDate}
           </Card.Subtitle>
-          <Card.Text>{task.description}</Card.Text>
-          <Card.Text>{task.progress}</Card.Text>
+          <Card.Text style={{color: "#f6f6f6"}}>{task.description}</Card.Text>
+          <Card.Text style={{color: "#f6f6f6"}}>{task.progress}</Card.Text>
           <select 
             className="form-select"
             value={progress}
+            id="container"
             onChange={(e) => {
               setProgress(e.target.value);
             }}
           >
-            <option value="">Open this select menu</option>
-            <option value="No progress">No progress</option>
-            <option value="In progress">In progress</option>
-            <option value="Finished">Finished</option>
+            <option style={{padding:"2rem"}} value="No progress">No progress</option>
+            <option style={{padding:"2rem"}} value="In progress">In progress</option>
+            <option style={{padding:"2rem"}} value="Finished">Finished</option>
           </select>
-          <Button style={{borderRadius: "100rem", padding:"1rem"}} variant="success" className="me-2" onClick={updateTask}>
+          <button id="main-way" style={{marginTop:"1rem"}} variant="success" className="me-2" onClick={updateTask}>
             Update Status
-          </Button>
+          </button>
           {isAdmin && (
             <>
-              <Button style={{borderRadius: "100rem", padding:"1rem"}} variant="danger" onClick={() => setShowDeleteModal(true)}>
+              <button id="main-way" variant="danger" onClick={() => setShowDeleteModal(true)}>
                 Delete Task
-              </Button>
+              </button>
               <DeleteTaskModal
                 show={showDeleteModal}
                 onClose={() => setShowDeleteModal(false)}
@@ -139,7 +148,7 @@ function TaskDetailed() {
             </>
           )}
         </Card.Body>
-        <Button onclick={`/group/${task.groupId}`} variant="primary">Back</Button>
+        {/* <Button onclick={`/group/${task.groupId}`} variant="primary">Back</Button> */}
       </Card>
     </Container>
   );

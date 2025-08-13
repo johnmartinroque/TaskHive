@@ -79,8 +79,8 @@ function TaskCalendar() {
   const selectedTasks = selectedDate ? tasksByDate[selectedDate] || [] : [];
 
   return (
-    <div className="calendar-container my-4">
-      <h4>All Task Deadlines</h4>
+    <div className="calendar-container d-flex flex-column align-items-center">
+      <h1>All Task Deadlines</h1>
       {loading ? (
         <p>Loading calendar...</p>
       ) : (
@@ -88,7 +88,7 @@ function TaskCalendar() {
           <Calendar tileContent={tileContent} onClickDay={handleDateClick} />
           {selectedDate && (
             <div className="mt-4">
-              <h5>Tasks due on {selectedDate}:</h5>
+              <h2>Tasks due on {selectedDate}:</h2>
               {selectedTasks.length > 0 ? (
                 <div className="d-flex flex-column gap-3">
                   {selectedTasks.map((task) => (
@@ -105,7 +105,7 @@ function TaskCalendar() {
                   ))}
                 </div>
               ) : (
-                <p>No tasks due on this day.</p>
+                <h4>No tasks due on this day.</h4>
               )}
             </div>
           )}

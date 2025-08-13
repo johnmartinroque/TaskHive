@@ -1,0 +1,23 @@
+.add-task-container{
+  width: 100%;
+  min-height: 25rem;
+  padding: 2rem;
+  background-color: #1f1f1f ;
+  border-radius: 0.5rem;
+}
+
+#container-description{
+    margin: .2rem;
+    border-radius: 1.5rem;
+    padding: 1rem;
+    background-color: #494949;
+    border: none;
+    box-shadow: inset 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+#container-description::placeholder{
+  color: #888;
+  opacity: 1; 
+}

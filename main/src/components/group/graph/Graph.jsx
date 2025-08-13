@@ -7,6 +7,7 @@ import {
   Tooltip,
   CartesianGrid,
   ResponsiveContainer,
+  LabelList
 } from "recharts";
 import { collection, query, where, getDocs } from "firebase/firestore";
 import { Spinner } from "react-bootstrap";
@@ -60,25 +61,25 @@ function Graph({ selectedGroupId }) {
   if (chartData.length === 0) return <p>No finished tasks yet to show.</p>;
 
   return (
-    <div style={{ paddingTop: "1rem" }}>
-      <h2 style={{ color: "#f6f6f6" }} className="mb-3">
+    <div style={{ paddingTop: "2rem", backgroundColor: "#1f1f1f", borderRadius: "0.5rem", height: "100%" }}>
+      <h1 style={{ color: "#f6f6f6", textAlign: "center" }} className="mb-3">
         Top 3
-      </h2>
+      </h1>
       <ResponsiveContainer
         width="100%"
         height={300}
-        style={{ paddingRight: "3rem", marginTop: "2rem", height: "100%" }}
+        style={{ paddingRight: "3rem", marginTop: "2rem", height: "100%",  }}
       >
         <BarChart data={chartData}>
-          <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="name" fontWeight={600} />
           <YAxis allowDecimals={false} />
           <Tooltip />
           <Bar
             dataKey="value"
-            fill="#82ca9d"
-            label={{ position: "insideTop", fill: "#000" }}
-          />
+            fill="#fa6000ff"
+            radius={[5, 5, 0, 0]}
+          >
+          </Bar>
         </BarChart>
       </ResponsiveContainer>
     </div>

@@ -4,7 +4,6 @@ import TaskCalendar from "../components/task/TaskCalendar";
 function CalendarScreen() {
   return (
     <div>
-      CalendarScreen
       <TaskCalendar />
     </div>
   );
