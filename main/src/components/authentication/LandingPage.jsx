@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Chat from "../group/chat/Chat";
+import HiveTaskLogo from "../HiveTaskLogo.png";
+import "../../src_css/components/authentication/LandingPage.css";
 
 function LandingPage() {
   const [button, setButton] = useState(true);
@@ -12,12 +14,9 @@ function LandingPage() {
     }
   };
   return (
-    <div>
-      <h1>Landing Page</h1>
-      <p>gskehjhejklsehjklg</p>
-      <h1>COMMIT TEST</h1>
-      <button onClick={click}>TEST BUTTOn</button>
-      <h1>{button ? <h1>hello</h1> : <h1>bye </h1>}</h1>
+    <div style={{ justifyContent: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+      <img src={HiveTaskLogo} alt="HiveTask Logo" id="LandingLogo" />
+      <h2 className="fade-up">TaskHive is a collaborative to-do list app built for groups—whether families, friends, classmates, or coworkers. Tasks can be created, assigned, marked complete, and discussed in real time.</h2>
     </div>
   );
 }

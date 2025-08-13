@@ -1,0 +1,54 @@
+#LandingLogo {
+  height: 45vh;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  margin-left: 1.2rem;
+  transition: 0.2s ease-in-out;
+  animation: rollIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1; /* Add this line */
+}
+
+
+@keyframes rollIn {
+  0% {
+    transform: translateX(-60vw) rotate(-240deg) scale(1);
+    opacity: 1;
+  }
+  80% {
+    transform: translateX(8vw) rotate(30deg) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeup {
+    0% {
+        transform: translateX(-60vw);
+        opacity: 0;
+    }
+
+    75% {
+        transform: translateX(-60vw);
+        opacity: 0;
+    }
+
+    95% {
+        transform: translateX(4vw);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-up {
+    animation: fadeup 3s ease-in-out forwards;
+    text-align: justify;
+    width: 35vw;
+    margin-top: 10vh;
+    color: #1f1f1f !important;
+}
