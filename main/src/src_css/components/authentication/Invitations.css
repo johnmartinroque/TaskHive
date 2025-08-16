@@ -1,0 +1,39 @@
+.invitations-container {
+  margin-top: 1rem;
+}
+
+.invitations-list {
+  border-radius: 1.2rem;
+}
+
+.invitations-list-item {
+  background-color: #1f1f1f;
+  border: none;
+  padding: 1rem;
+  color: #f6f6f6;
+}
+
+.invitations-list-item h4 {
+  margin-bottom: 0.5rem;
+}
+
+.invite-text {
+  color: #aaa;
+  margin-left: 1rem;
+}
+
+.invite-accept-btn,
+.invite-decline-btn {
+  border-radius: 1.2rem;
+  padding: 0.5rem;
+  min-width: 120px;
+  width: 120px;
+  text-align: center;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.invite-accept-btn {
+  margin-bottom: 0.7rem;
+}

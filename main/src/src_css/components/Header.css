@@ -19,6 +19,15 @@
 }
 
 @media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column !important;
+    width: 100%;
+    background: #000 !important;
+    padding: 1rem 0;
+  }
+  .navbar-collapse {
+    background: #000 !important;
+  }
   #sidebar {
     display: none !important;
   }
@@ -211,4 +220,11 @@
 #draop .dropdown-item:hover{
   background-color: #393939;
   padding: .6rem;
+}
+
+.collapse.navbar-collapse {
+  background-color: black !important;
+}
+.navbar-nav.flex-column .nav-item {
+  width: 100%;
 }

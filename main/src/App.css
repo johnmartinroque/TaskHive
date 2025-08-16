@@ -17,3 +17,9 @@ h4 {
   padding-top: 5.625rem;
   padding-left: 7.1rem;
 }
+
+@media (max-width: 991px) {
+  .main-content {
+    padding-left: 0 !important;
+  }
+}

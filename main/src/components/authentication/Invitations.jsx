@@ -12,6 +12,7 @@ import { getAuth } from "firebase/auth";
 import { Button, ListGroup } from "react-bootstrap";
 import { db } from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import "../../src_css/components/authentication/Invitations.css";
 
 function Invitations() {
   const [invitations, setInvitations] = useState([]);
@@ -98,33 +99,29 @@ function Invitations() {
   if (invitations.length === 0) return <p>No invitations at the moment.</p>;
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 invitations-container">
       <h1>Group Invitations</h1>
-      <ListGroup style={{borderRadius:"1.2rem"}}>
+      <ListGroup className="invitations-list">
         {invitations.map((invite) => (
           <ListGroup.Item
             key={invite.id}
-            className="d-flex justify-content-between align-items-center"
-            style={{backgroundColor:"#1f1f1f", border:"none", padding:"1rem", color:"#f6f6f6"}}
+            className="invitations-list-item d-flex justify-content-between align-items-center"
           >
             <div>
               <h4>{invite.groupName}</h4>
-              <div className="text-muted" style={{marginLeft:'1rem'}}>
-                You’ve been invited to join
-              </div>
+              <div className="invite-text">You’ve been invited to join</div>
             </div>
-            <div>
+            <div className="invite-btn-group">
               <Button
-                style={{borderRadius:"1.2rem", padding:".5rem"}}
+                className="invite-accept-btn"
                 variant="success"
                 size="sm"
-                className="me-2"
                 onClick={() => acceptInvitation(invite)}
               >
                 ✔ Accept
               </Button>
               <Button
-                style={{borderRadius:"1.2rem", padding:".5rem"}}
+                className="invite-decline-btn"
                 variant="danger"
                 size="sm"
                 onClick={() => declineInvitation(invite.id)}

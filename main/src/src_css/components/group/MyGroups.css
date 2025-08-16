@@ -42,3 +42,9 @@
 .group-link:active{
     transform: scale(1);
 }
+
+@media (max-width: 991px) {
+  .group-card {
+  margin-bottom: 1rem;
+}
+}
