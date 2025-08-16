@@ -120,6 +120,35 @@ function Header() {
                           Logout
                         </button>
                       </li>
+                      <li>
+                        <hr className="dropdown-divider" />
+                      </li>
+                      {/* Sidebar links for mobile */}
+                      <li>
+                        <Link className="dropdown-item" to="/">
+                          <i className="bi bi-activity"></i> Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/calendar">
+                          <i className="bi bi-calendar2-week"></i> Calendar
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/">
+                          <i className="bi bi-person-add"></i> Add Person
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/">
+                          <i className="bi bi-gear"></i> Settings
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" to="/createGroup">
+                          <i className="bi bi-plus-lg"></i> Create Group
+                        </Link>
+                      </li>
                     </ul>
                   </li>
                 </div>

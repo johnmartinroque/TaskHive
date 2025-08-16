@@ -16,7 +16,12 @@
   left: 0;
   background-color: black;      
   padding-top: 2rem;
+}
 
+@media (max-width: 991px) {
+  #sidebar {
+    display: none !important;
+  }
 }
 
 .nav-item{
