@@ -1,6 +1,7 @@
 import React from "react";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../firebase";
+import "../../src_css/components/authentication/Invitations.css"; // Reuse Invitations styles
 
 function JoinRequests({ group, setGroup }) {
   const groupId = group.id;
@@ -26,24 +27,27 @@ function JoinRequests({ group, setGroup }) {
   if (pendingMembers.length === 0) return null;
 
   return (
-    <div className="mt-4">
-      <h5>Join Requests</h5>
-      <ul className="list-group">
+    <div className="mt-4 reqquests-container">
+      <h1>Join Requests</h1>
+      <ul className="invitations-list list-unstyled">
         {pendingMembers.map((member) => (
           <li
             key={member.id}
-            className="list-group-item d-flex justify-content-between align-items-center"
+            className="invitations-list-item d-flex justify-content-between align-items-center"
           >
-            {member.name}
             <div>
+              <h4>{member.name}</h4>
+              <div className="invite-text">Wants to join your group</div>
+            </div>
+            <div className="invite-btn-group">
               <button
-                className="btn btn-success btn-sm me-2"
+                className="invite-accept-btn btn btn-success btn-sm"
                 onClick={() => approveRequest(member.id)}
               >
                 ✔ Accept
               </button>
               <button
-                className="btn btn-danger btn-sm"
+                className="invite-decline-btn btn btn-danger btn-sm"
                 onClick={() => declineRequest(member.id)}
               >
                 ✖ Decline

@@ -30,7 +30,7 @@ function GroupDetailed() {
 
   const navigate = useNavigate();
 
-  const auth = getAuth();
+  const auth = getAuth(); 
   const user = auth.currentUser;
 
   const leaveGroup = async () => {
@@ -168,10 +168,18 @@ function GroupDetailed() {
   return (
     <div className="group-detailed-wrapper">
       <h1>{group.groupName}</h1>
+      {isAdmin && <JoinRequests group={group} setGroup={setGroup} />}
       <GroupMembers
         members={group.members}
         isAdmin={isAdmin}
         handleRemoveMember={requestRemoveMember}
+      />
+
+      <RemoveMember
+        show={showRemoveModal}
+        onClose={() => setShowRemoveModal(false)}
+        onConfirm={confirmRemoveMember}
+        name={memberToRemove?.name || "this member"}
       />
 
       <Row>
@@ -216,13 +224,7 @@ function GroupDetailed() {
         title="Leave Group Confirmation"
         body={`Are you sure you want to leave "${group.groupName}"?`}
       />
-      <RemoveMember
-        show={showRemoveModal}
-        onClose={() => setShowRemoveModal(false)}
-        onConfirm={confirmRemoveMember}
-        name={memberToRemove?.name || "this member"}
-      />
-      {isAdmin && <JoinRequests group={group} setGroup={setGroup} />}
+      
       <Chat groupId={group.id} groupMembers={group.members} />
     </div>
   );

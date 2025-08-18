@@ -127,9 +127,9 @@ function TaskDetailed() {
               setProgress(e.target.value);
             }}
           >
-            <option style={{padding:"2rem"}} value="No progress">No progress</option>
-            <option style={{padding:"2rem"}} value="In progress">In progress</option>
-            <option style={{padding:"2rem"}} value="Finished">Finished</option>
+            <option value="No progress">No progress</option>
+            <option value="In progress">In progress</option>
+            <option value="Finished">Finished</option>
           </select>
           <button id="main-way" style={{marginTop:"1rem"}} variant="success" className="me-2" onClick={updateTask}>
             Update Status

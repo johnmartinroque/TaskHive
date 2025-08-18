@@ -22,6 +22,11 @@
     font-weight: 600;
 }
 
+#container option {
+  box-sizing: border-box;
+  padding: 2rem;
+}
+
 #container::placeholder{
   color: #888;
   opacity: 1; 

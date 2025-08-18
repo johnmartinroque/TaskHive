@@ -11,11 +11,15 @@ export default function RemoveMember({ show, onClose, onConfirm, name }) {
         Are you sure you want to remove <strong>{name}</strong> from the group?
       </Modal.Body>
       <Modal.Footer>
-        <Button variant="secondary" onClick={onClose}>
-          Cancel
+        <Button variant="danger" onClick={onClose}
+          style={{scale:"0.8", marginRight:'-1rem', color:'#1f1f1f'}}
+          id="buttones">
+          <h4>Cancel</h4>
         </Button>
-        <Button variant="danger" onClick={onConfirm}>
-          Remove
+        <Button variant="warning" onClick={onConfirm}
+          style={{scale:"0.8"}}
+          id="buttones">
+          <h4>Remove</h4>
         </Button>
       </Modal.Footer>
     </Modal>

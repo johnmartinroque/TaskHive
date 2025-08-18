@@ -2,13 +2,17 @@
   margin-top: 1rem;
 }
 
+.requests-container {
+  margin-top: 1rem;
+}
+
 .invitations-list {
   border-radius: 1.2rem;
 }
 
 .invitations-list-item {
-  background-color: #1f1f1f;
-  border: none;
+  background-color: #1f1f1f !important;
+  border: none !important;
   padding: 1rem;
   color: #f6f6f6;
 }
@@ -30,10 +34,5 @@
   width: 120px;
   text-align: center;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.invite-accept-btn {
-  margin-bottom: 0.7rem;
+  margin: 0.2rem 0.2rem;
 }
