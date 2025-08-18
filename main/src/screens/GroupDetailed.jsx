@@ -179,33 +179,31 @@ function GroupDetailed() {
           <AddTask groupId={group.id} groupName={group.groupName} />
         </Col>
         <Col>
-        <Graph selectedGroupId={group.id} />
+          <Graph selectedGroupId={group.id} />
         </Col>
       </Row>
 
       <Row className="mt-5">
         <Col>
-
-        <div className="d-flex justify-content-between align-items-center">
-          <h1 className="me-auto mb-2">Group Tasks</h1>
-          {isAuthorized && (
-            <Button
-              id="buttones"
-              variant="warning"
-              className="mb-2 ms-auto"
-              onClick={() => setShowLeaveModal(true)}
-              disabled={
-                isAdmin &&
-                group.members.filter((m) => m.role === "admin").length === 1
-              }
-            >
-              <h4>Leave Group</h4>
-            </Button>
-          )}
-        </div>
+          <div className="d-flex justify-content-between align-items-center">
+            <h1 className="me-auto mb-2">Group Tasks</h1>
+            {isAuthorized && (
+              <Button
+                id="buttones"
+                variant="warning"
+                className="mb-2 ms-auto"
+                onClick={() => setShowLeaveModal(true)}
+                disabled={
+                  isAdmin &&
+                  group.members.filter((m) => m.role === "admin").length === 1
+                }
+              >
+                <h4>Leave Group</h4>
+              </Button>
+            )}
+          </div>
 
           <GroupTasks groupId={group.id} />
-          
         </Col>
         <Col>
           <FinishedTasks />
@@ -224,7 +222,7 @@ function GroupDetailed() {
         onConfirm={confirmRemoveMember}
         name={memberToRemove?.name || "this member"}
       />
-
+      {isAdmin && <JoinRequests group={group} setGroup={setGroup} />}
       <Chat groupId={group.id} groupMembers={group.members} />
     </div>
   );
