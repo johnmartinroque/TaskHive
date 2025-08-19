@@ -62,6 +62,7 @@ h5 {
   color: white;
   scrollbar-width: thin;
   scrollbar-color: rgba(255, 255, 255, 0.4) transparent;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 .chat-box::-webkit-scrollbar {
@@ -156,4 +157,31 @@ h5 {
   outline: none;
   border: 0px;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.3);
+}
+
+.group-detailed-wrapper {
+  padding: 2rem 5rem;
+}
+
+@media (max-width: 991px) {
+  .group-detailed-wrapper {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  #buttones h4 {
+    font-size: 1rem;
+  }
+
+  .chat-wrapper {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 100%;
+  }
 }

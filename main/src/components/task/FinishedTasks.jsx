@@ -4,6 +4,7 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 import { Link, useParams } from "react-router-dom";
 import { Card, Spinner } from "react-bootstrap";
 import "../../src_css/components/task/TaskCard.css";
+import "../../src_css/components/task/FinishedTasks.css";
 
 function FinishedTasks() {
   const { groupId } = useParams();
@@ -41,11 +42,11 @@ function FinishedTasks() {
 
   return (
     <div className="text-end container">
-      <h1 className="text-end mb-4">Finished Tasks</h1>
+      <h1 className="mb-5 text-center text-md-end me-auto">Finished Tasks</h1>
       <div className="row justify-content-end">
         {finishedTasks.map((task) => (
           <Link to={`/tasks/${task.id}`} key={task.id} className="col-md-6 mb-4 d-flex justify-content-end task-link">
-            <Card className="p-3 w-100" style={{ maxWidth: "22rem", backgroundColor: "#1f1f1f", boxShadow: "inset 0px -2px 6px -2px rgba(0, 0, 0, 0.26)", }}>
+            <Card className="p-3 w-100" style={{ backgroundColor: "#1f1f1f", boxShadow: "inset 0px -2px 6px -2px rgba(0, 0, 0, 0.26)", }}>
               <h4 style = {{overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"}}>
                 {task.name}
               </h4>

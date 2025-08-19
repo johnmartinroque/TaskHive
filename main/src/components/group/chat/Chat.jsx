@@ -1,5 +1,3 @@
-// src/components/group/chat/Chat.js
-
 import React, { useState, useEffect } from "react";
 import {
   collection,

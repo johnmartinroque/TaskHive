@@ -13,7 +13,7 @@ function GroupMembers({ members, isAdmin, handleRemoveMember }) {
     <div>
       <h1>Members:</h1>
 
-      <ul className="invitations-list list-unstyled">
+      <ul className="invitations-list requests-grid list-unstyled">
         {approvedMembers.map((member, index) => (
           <li
             key={member.id}

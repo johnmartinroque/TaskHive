@@ -29,7 +29,7 @@ function JoinRequests({ group, setGroup }) {
   return (
     <div className="mt-4 invitations-container">
       <h1>Join Requests</h1>
-      <ul className="invitations-list requests-grid list-unstyled">
+      <ul className="invitations-list list-unstyled">
   {pendingMembers.map((member) => (
     <li
       key={member.id}

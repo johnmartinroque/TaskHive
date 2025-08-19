@@ -48,10 +48,10 @@
 .requests-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1rem;
+  gap: 0.7rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 991px) {
   .requests-grid {
     grid-template-columns: 1fr;
   }

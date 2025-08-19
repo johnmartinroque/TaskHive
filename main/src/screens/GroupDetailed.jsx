@@ -182,41 +182,43 @@ function GroupDetailed() {
         name={memberToRemove?.name || "this member"}
       />
 
-      <Row>
-        <Col>
-          <AddTask groupId={group.id} groupName={group.groupName} />
-        </Col>
-        <Col>
-          <Graph selectedGroupId={group.id} />
-        </Col>
-      </Row>
+<Row>
+  <Col xs={12} md={6} className="mb-3">
+    <AddTask groupId={group.id} groupName={group.groupName} />
+  </Col>
+  <Col xs={12} md={6} className="mb-3">
+    <Graph selectedGroupId={group.id} />
+  </Col>
+</Row>
 
-      <Row className="mt-5">
-        <Col>
-          <div className="d-flex justify-content-between align-items-center">
-            <h1 className="me-auto mb-2">Group Tasks</h1>
-            {isAuthorized && (
-              <Button
-                id="buttones"
-                variant="warning"
-                className="mb-2 ms-auto"
-                onClick={() => setShowLeaveModal(true)}
-                disabled={
-                  isAdmin &&
-                  group.members.filter((m) => m.role === "admin").length === 1
-                }
-              >
-                <h4>Leave Group</h4>
-              </Button>
-            )}
-          </div>
+      <Row className="mt-5 bottom-one">
+  <Col xs={12} md={6} className="mb-3">
+    <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+      <h1 className="mb-2 text-end text-md-start w-100">Group Tasks</h1>
+      {isAuthorized && (
+        <Button
+          id="buttones"
+          variant="warning"
+          className="mb-2 ms-md-auto"
+          onClick={() => setShowLeaveModal(true)}
+          disabled={
+            isAdmin &&
+            group.members.filter((m) => m.role === "admin").length === 1
+          }
+        >
+          <h4>Leave Group</h4>
+        </Button>
+      )}
+    </div>
 
-          <GroupTasks groupId={group.id} />
-        </Col>
-        <Col>
-          <FinishedTasks />
-        </Col>
-      </Row>
+    <GroupTasks groupId={group.id} />
+  </Col>
+
+  <Col xs={12} md={6} className="mb-3">
+    <FinishedTasks />
+  </Col>
+</Row>
+
       <LeaveGroup
         show={showLeaveModal}
         onClose={() => setShowLeaveModal(false)}
