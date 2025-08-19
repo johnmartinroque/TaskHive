@@ -45,57 +45,61 @@ function ChangePassword() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5">
-      <div
-        className="rounded p-4 shadow"
-        style={{ width: "40rem", backgroundColor: "#393939" }}
-      >
-        <Row>
-          <Col>
-            <h1 style={{ fontWeight: "600" }}>Change Password</h1>
-            <div className="mb-3">
-              <p style={{color:"white"}} className="form-label">Current Password</p>
-              <input
-                style={{
-                  borderRadius: "10rem",
-                  border: "none",
-                  padding: "1rem",
-                  backgroundColor: "#1f1f1f",
-                }}
-                type="password"
-                className="form-control"
-                value={currentPassword}
-                onChange={(e) => setCurrentPassword(e.target.value)}
-                placeholder="Change Password"
-              />
-            </div>
-            <div className="mb-3">
-              <p style={{color:"white"}} className="form-label">New Password</p>
-              <input
-                style={{
-                  borderRadius: "10rem",
-                  border: "none",
-                  padding: "1rem",
-                  backgroundColor: "#1f1f1f",
-                }}
-                type="password"
-                className="form-control"
-                value={newPassword}
-                onChange={(e) => setNewPassword(e.target.value)}
-                placeholder="New Password"
-              />
-            </div>
-            <button
-              id="main-way"
-              onClick={handleChangePassword}
-            >
-              Change Password
-            </button>
-            {message && <p className="mt-2 text-danger">{message}</p>}
-          </Col>
-        </Row>
-      </div>
-    </div>
+<div className="container-fluid d-flex justify-content-center mt-5 px-3">
+  <div
+    className="rounded p-4 shadow w-100"
+    style={{ maxWidth: "600px", backgroundColor: "#393939" }}
+  >
+    <Row>
+      <Col>
+        <h1 style={{ fontWeight: "600" }}>Change Password</h1>
+
+        <div className="mb-3">
+          <p style={{ color: "white" }} className="form-label">Current Password</p>
+          <input
+            style={{
+              borderRadius: "10rem",
+              border: "none",
+              padding: "1rem",
+              backgroundColor: "#1f1f1f",
+              color: "#f6f6f6"
+            }}
+            type="password"
+            className="form-control"
+            value={currentPassword}
+            onChange={(e) => setCurrentPassword(e.target.value)}
+            placeholder="Current Password"
+          />
+        </div>
+
+        <div className="mb-3">
+          <p style={{ color: "white" }} className="form-label">New Password</p>
+          <input
+            style={{
+              borderRadius: "10rem",
+              border: "none",
+              padding: "1rem",
+              backgroundColor: "#1f1f1f",
+              color: "#f6f6f6"
+            }}
+            type="password"
+            className="form-control"
+            value={newPassword}
+            onChange={(e) => setNewPassword(e.target.value)}
+            placeholder="New Password"
+          />
+        </div>
+
+        <button id="main-way" onClick={handleChangePassword}>
+          Change Password
+        </button>
+
+        {message && <p className="mt-2 text-danger">{message}</p>}
+      </Col>
+    </Row>
+  </div>
+</div>
+
   );
 }
 

@@ -66,19 +66,20 @@ function ProfilePicture() {
   return (
     <div className="mb-3">
       <label className="form-label">
-        <h3>Select Profile Picture</h3>
+        <h1>Select Profile Picture</h1>
       </label>
 
-      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem", justifyContent:"center" }}>
+      <div className="avatar-container d-flex flex-wrap justify-content-center gap-3 px-2 px-md-5 mb-3">
         {avatars.map((avatar, index) => (
           <img
             key={index}
             src={avatar}
             alt={`avatar${index + 1}`}
             onClick={() => handleAvatarSelect(avatar)}
+            className="avatar-img"
             style={{
-              width: "80px",
               height: "80px",
+              aspectRatio: "1 / 1",
               borderRadius: "50%",
               cursor: "pointer",
               objectFit: "cover",
@@ -89,23 +90,9 @@ function ProfilePicture() {
         ))}
       </div>
 
+
       <button id="main-way" style={{width:"13rem", marginTop:"1rem"}} onClick={handleSubmit}>SUBMIT</button>
 
-      {/* <div style={{ marginTop: "1rem" }}>
-        <strong>Selected Picture Preview:</strong>
-      </div>
-      <img
-        src={selectedAvatar}
-        alt="Selected Avatar"
-        style={{
-          width: "100px",
-          height: "100px",
-          borderRadius: "50%",
-          border: "2px solid black",
-          objectFit: "cover",
-          marginTop: "0.5rem",
-        }}
-      /> */}
     </div>
   );
 }
