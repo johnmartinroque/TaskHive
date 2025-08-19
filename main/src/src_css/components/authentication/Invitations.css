@@ -36,3 +36,23 @@
   display: block;
   margin: 0.2rem 0.2rem;
 }
+
+.request-list-item {
+  background-color: #1f1f1f !important;
+  border: none !important;
+  padding: 1rem;
+  color: #f6f6f6;
+  border-radius: .5rem;
+}
+
+.requests-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .requests-grid {
+    grid-template-columns: 1fr;
+  }
+}

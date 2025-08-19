@@ -11,22 +11,31 @@ function GroupMembers({ members, isAdmin, handleRemoveMember }) {
 
   return (
     <div>
-      <h4>Members:</h4>
-      {approvedMembers.map((member, index) => (
-        <p key={index}>
-          {member.name} ({member.role})
-          {isAdmin && member.id !== user?.uid && (
-            <Button
+      <h1>Members:</h1>
+
+      <ul className="invitations-list list-unstyled">
+        {approvedMembers.map((member, index) => (
+          <li
+            key={member.id}
+            className="request-list-item d-flex justify-content-between align-items-center"
+          >
+            <div>
+              <h4>{member.name}</h4>
+              <div className="invite-text">({member.role})</div>
+            </div>
+            <div className="invite-btn-group">
+              <button
+              className="invite-decline-btn btn btn-danger btn-sm"
               variant="danger"
               size="sm"
               onClick={() => handleRemoveMember(member)}
-              className="ms-2"
             >
               Remove
-            </Button>
-          )}
-        </p>
-      ))}
+            </button>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

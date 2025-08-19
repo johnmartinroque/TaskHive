@@ -27,35 +27,35 @@ function JoinRequests({ group, setGroup }) {
   if (pendingMembers.length === 0) return null;
 
   return (
-    <div className="mt-4 reqquests-container">
+    <div className="mt-4 invitations-container">
       <h1>Join Requests</h1>
-      <ul className="invitations-list list-unstyled">
-        {pendingMembers.map((member) => (
-          <li
-            key={member.id}
-            className="invitations-list-item d-flex justify-content-between align-items-center"
-          >
-            <div>
-              <h4>{member.name}</h4>
-              <div className="invite-text">Wants to join your group</div>
-            </div>
-            <div className="invite-btn-group">
-              <button
-                className="invite-accept-btn btn btn-success btn-sm"
-                onClick={() => approveRequest(member.id)}
-              >
-                ✔ Accept
-              </button>
-              <button
-                className="invite-decline-btn btn btn-danger btn-sm"
-                onClick={() => declineRequest(member.id)}
-              >
-                ✖ Decline
-              </button>
-            </div>
-          </li>
-        ))}
-      </ul>
+      <ul className="invitations-list requests-grid list-unstyled">
+  {pendingMembers.map((member) => (
+    <li
+      key={member.id}
+      className="request-list-item d-flex justify-content-between align-items-center"
+    >
+      <div>
+        <h4>{member.name}</h4>
+        <div className="invite-text">Wants to join your group</div>
+      </div>
+      <div className="invite-btn-group">
+        <button
+          className="invite-accept-btn btn btn-success btn-sm"
+          onClick={() => approveRequest(member.id)}
+        >
+          ✔ Accept
+        </button>
+        <button
+          className="invite-decline-btn btn btn-danger btn-sm"
+          onClick={() => declineRequest(member.id)}
+        >
+          ✖ Decline
+        </button>
+      </div>
+    </li>
+  ))}
+</ul>
     </div>
   );
 }
