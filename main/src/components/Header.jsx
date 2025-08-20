@@ -98,7 +98,7 @@ function Header() {
 
               {user && (
                 <li className="user-form">
-                  <li className="nav-link">
+                  <li className="user-list">
                     <Link
                       className="user-link"
                       href="#"
@@ -111,9 +111,9 @@ function Header() {
                     </Link>
                     <ul className="dropdown-menu" id="draop">
                       <li>
-                        <Link className="dropdown-item" to="/profile">
+                        <button className="dropdown-item" to="/profile">
                           Profile
-                        </Link>
+                        </button>
                       </li>
                       <li>
                         <button className="dropdown-item" onClick={handleLogout}>
