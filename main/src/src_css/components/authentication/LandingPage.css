@@ -1,20 +1,44 @@
-#LandingLogo {
-  height: 45vh;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  margin-left: 1.2rem;
-  transition: 0.2s ease-in-out;
-  animation: rollIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1; /* Add this line */
+.landing-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80vh;
+  /* background-color: red; */
 }
 
+#LandingLogo {
+  width: 25vw;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  transition: 0.2s ease-in-out;
+  animation: rollIn 3.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1;
+}
 
+/* Tablet */
+@media (max-width: 991px) {
+  #LandingLogo {
+    width: 40vw;
+    animation: rollIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #LandingLogo {
+    width: 55vw;
+    animation: rollIn 2.5s cubic-bezier(0.68, -0.55, 0.27, 1.55) 0s 1;
+  }
+}
+
+/* Animation Keyframes */
 @keyframes rollIn {
   0% {
-    transform: translateX(-60vw) rotate(-240deg) scale(1);
-    opacity: 1;
+    transform: translateX(-100vw) rotate(-240deg) scale(1);
+    opacity: 0;
   }
   80% {
-    transform: translateX(8vw) rotate(30deg) scale(1);
+    transform: translateX(10vw) rotate(30deg) scale(1);
     opacity: 1;
   }
   100% {
@@ -23,32 +47,43 @@
   }
 }
 
-@keyframes fadeup {
-    0% {
-        transform: translateX(-60vw);
-        opacity: 0;
-    }
-
-    75% {
-        transform: translateX(-60vw);
-        opacity: 0;
-    }
-
-    95% {
-        transform: translateX(4vw);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.fade-up {
-    animation: fadeup 3s ease-in-out forwards;
-    text-align: justify;
-    width: 35vw;
-    margin-top: 10vh;
-    color: #1f1f1f !important;
+#land-button {
+  margin: 2rem 0.2rem;
+  border-radius: 3rem;
+  padding: 1rem 3rem;
+  border: none;
+  width: 100%;
+  opacity: 0;
+  background-color: #ffffff !important;
+  transition: 0.2s ease-in-out;
+  animation: fadeIn 1s ease-in-out forwards;
+  animation-delay: 3s; 
+  color: #454c5b;
+  text-transform: uppercase;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  #land-button {
+    animation-delay: 2s;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  #land-button {
+    animation-delay: 2s;
+  }
 }

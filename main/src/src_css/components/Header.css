@@ -20,13 +20,12 @@
 
 @media (max-width: 991px) {
   .navbar-nav {
-    flex-direction: column !important;
     width: 100%;
-    background: #000 !important;
+    flex-direction: column !important;
     padding: 1rem 0;
   }
   .navbar-collapse {
-    background: #000 !important;
+    width: 100%;
   }
   #sidebar {
     display: none !important;
@@ -48,6 +47,8 @@
 .nav-item:active{
     background-color: #1f1f1f;
 }
+
+
 
 #sidebar .nav-item{
     background-color: #1f1f1f;
@@ -123,19 +124,6 @@
     background-color: #1f1f1f;
 }
 
-#rightest{
-  position: fixed;
-  right: 1.5rem;
-  display: flex;
-}
-
-#rightest h5{
-  color:#f6f6f6;
-  margin: 1rem 1rem;
-  font-family: 'Roboto Condensed', sans-serif !important;
-  text-transform: uppercase;
-}
-
 .nav-link{
     color: #f6f6f6 !important;
     font-family: 'Roboto', sans-serif;
@@ -143,10 +131,61 @@
 .search-form{
   padding: .5rem;
 }
+
+.user-link{
+  width: 100%;
+  display: flex;
+  text-decoration: none !important;
+  margin: 0;
+}
+
+.user-form{
+  position: fixed;
+  right: 1.5rem;
+  display: flex;
+  border-radius: 10rem;
+  width: 10rem;
+  margin: 0.5rem 0.5rem;
+  padding: 0;
+
+}
+
+.user-form h5{
+  color:#f6f6f6;
+  margin: 1rem 1rem;
+  font-family: 'Roboto Condensed', sans-serif !important;
+  text-transform: uppercase;
+}
+
+@media (max-width: 991px) {
+  .user-form {
+    background-color: #1f1f1f;
+    transition: background-color 0.2s ease-in-out;
+    position: inherit;
+    width: 96%;
+    justify-content: center;
+    height: 4rem;
+    margin: 0.5rem;
+  }
+
+  .user-form:hover {
+    background-color: #393939;
+  }
+
+  .user-form:active {
+    background-color: #1f1f1f;
+  }
+
+  .user-link{
+    width: 100%;
+  }
+}
+
 #search-but{
   background-color: #1f1f1f;
   border: none;
   color: #f6f6f6;
+  height: 3.8rem;
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   transition: background-color 0.2s ease-in-out;
@@ -167,6 +206,13 @@
   width: 15vw;
   margin-left: .5vw;
   background-color: #1f1f1f;
+}
+
+@media (max-width: 991px) {
+  #search-form {
+    width: 100%;
+    margin-left: .5rem;
+  }
 }
 
 #search-form:focus, #search-form.has-value, #search-form:active{

@@ -57,7 +57,7 @@ function Header() {
           </button>
 
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/" className="nav-link active" aria-current="page">
                   Home
@@ -77,7 +77,7 @@ function Header() {
                   ></button>
                   <input
                     id="search-form"
-                    className={`form-control me-2 search-input ${
+                    className={`form-control search-input ${
                       searchTerm ? "has-value" : ""
                     }`}
                     type="search"
@@ -97,16 +97,16 @@ function Header() {
               )}
 
               {user && (
-                <div className="search-form d-flex" id="rightest">
-                  <h5>{user.displayName || user.email}</h5>
-                  <li className="nav-link active dropdown" id="last-main">
+                <li className="user-form">
+                  <li className="nav-link">
                     <Link
-                      className="nav-link"
+                      className="user-link"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
+                      <h5>{user.displayName || user.email}</h5>
                       <UserAvatar size={55} />
                     </Link>
                     <ul className="dropdown-menu" id="draop">
@@ -122,7 +122,7 @@ function Header() {
                       </li>
                     </ul>
                   </li>
-                </div>
+                </li>
               )}
             </ul>
           </div>

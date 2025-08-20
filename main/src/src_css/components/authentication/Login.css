@@ -11,6 +11,20 @@
   font-weight: 600;
 }
 
+@media (max-width: 768px) {
+    #login{
+    width: 30rem;
+    margin: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #login{
+    width: 35rem;
+    margin: 1rem;
+    }
+}
+
 #container{
     margin: .2rem;
     border-radius: 3rem;
@@ -21,6 +35,8 @@
     color: #ffffff;
     font-weight: 600;
 }
+
+
 
 #container option {
   box-sizing: border-box;

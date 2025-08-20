@@ -67,7 +67,7 @@ function Register() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-5">
+    <div className="d-flex justify-content-center mt-1">
       <div id="login">
         <Row>
           <Col>
