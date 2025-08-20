@@ -102,9 +102,6 @@ function Header() {
                 <Link to="/profile" className="nav-link active" aria-current="page">Profile</Link>
               </li>
               <li className="desk-item">
-                <Link onClick={handleLogout} className="nav-link active" aria-current="page">Logout</Link>
-              </li>
-              <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
               </li>
               <li className="desk-item">
@@ -119,27 +116,30 @@ function Header() {
               <li className="desk-item">
                 <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
               </li>
+              <li className="desk-item">
+                <Link onClick={handleLogout} className="nav-link active" aria-current="page">Logout</Link>
+              </li>
             </ul>
             )}
-            
+
               {user && (
-                <li className="user-form">
-                  <li className="user-list">
+                <div className="search-form d-flex" id="rightest">
+                  <h5>{user.displayName || user.email}</h5>
+                  <li className="nav-link active dropdown" id="last-main">
                     <Link
-                      className="user-link"
+                      className="nav-link"
                       href="#"
                       role="button"
                       data-bs-toggle="dropdown"
                       aria-expanded="false"
                     >
-                      <h5>{user.displayName || user.email}</h5>
                       <UserAvatar size={55} />
                     </Link>
                     <ul className="dropdown-menu" id="draop">
                       <li>
-                        <button className="dropdown-item" onClick={() => navigate('/profile')}>
+                        <Link className="dropdown-item" to="/profile">
                           Profile
-                        </button>
+                        </Link>
                       </li>
                       <li>
                         <button className="dropdown-item" onClick={handleLogout}>
@@ -148,7 +148,7 @@ function Header() {
                       </li>
                     </ul>
                   </li>
-                </li>
+                </div>
               )}
             </ul>
           </div>
