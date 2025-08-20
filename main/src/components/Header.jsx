@@ -40,7 +40,7 @@ function Header() {
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" id="nav">
-        <div className="container-fluid">
+        <div className="container-fluid" style={{backgroundColor:"black"}}>
           <Link to="/" className="navbar-brand">
             <img src={HiveTaskLogo} alt="HiveTask Logo" id="Logo" />
           </Link>
@@ -97,6 +97,32 @@ function Header() {
               )}
 
               {user && (
+              <ul className="navbar-nav me-auto mb-lg-0">
+              <li className="desk-item">
+                <Link to="/profile" className="nav-link active" aria-current="page">Profile</Link>
+              </li>
+              <li className="desk-item">
+                <Link onClick={handleLogout} className="nav-link active" aria-current="page">Logout</Link>
+              </li>
+              <li className="desk-item">
+                <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
+              </li>
+              <li className="desk-item">
+                <Link to="/calendar" className="nav-link active bi bi-calendar2-week" aria-current="page"></Link>
+              </li>
+              <li className="desk-item">
+                <Link to="/" className="nav-link active bi bi-person-add" aria-current="page"></Link>
+              </li>
+              <li className="desk-item ">
+                <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
+              </li>
+              <li className="desk-item">
+                <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
+              </li>
+            </ul>
+            )}
+            
+              {user && (
                 <li className="user-form">
                   <li className="user-list">
                     <Link
@@ -111,7 +137,7 @@ function Header() {
                     </Link>
                     <ul className="dropdown-menu" id="draop">
                       <li>
-                        <button className="dropdown-item" to="/profile">
+                        <button className="dropdown-item" onClick={() => navigate('/profile')}>
                           Profile
                         </button>
                       </li>
@@ -131,39 +157,19 @@ function Header() {
       <nav id="sidebar">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
-            <Link
-              to="/"
-              className="nav-link active bi bi-activity"
-              aria-current="page"
-            ></Link>
+            <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/calendar"
-              className="nav-link active bi bi-calendar2-week"
-              aria-current="page"
-            ></Link>
+            <Link to="/calendar" className="nav-link active bi bi-calendar2-week" aria-current="page"></Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/"
-              className="nav-link active bi bi-person-add"
-              aria-current="page"
-            ></Link>
+            <Link to="/" className="nav-link active bi bi-person-add" aria-current="page"></Link>
           </li>
           <li className="nav-item ">
-            <Link
-              to="/"
-              className="nav-link active bi bi-gear"
-              aria-current="page"
-            ></Link>
+            <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
           </li>
           <li className="last-item">
-            <Link
-              to="/createGroup"
-              className="nav-link active bi bi-plus-lg"
-              aria-current="page"
-            ></Link>
+            <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
           </li>
         </ul>
       </nav>

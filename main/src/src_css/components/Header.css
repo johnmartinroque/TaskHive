@@ -34,7 +34,27 @@
     background-color: #1f1f1f;
 }
 
+.desk-item{
+    background-color: #1f1f1f;
+    border-radius: 10rem;
+    margin:0.5rem .5rem;
+    padding: .6rem;
+    transition: background-color 0.2s ease-in-out;
+    display: none;
+}
 
+.desk-item:hover{
+    background-color: #393939;
+}
+
+.desk-item:active{
+    background-color: #1f1f1f;
+}
+
+#navbarSupportedContent{
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+}
 
 #sidebar .nav-item{
     background-color: #1f1f1f;
@@ -147,7 +167,7 @@
     .navbar-nav {
     width: 100%;
     flex-direction: column !important;
-    padding: 1rem 0;
+    padding: 0rem 0;
   }
   .navbar-collapse {
     width: 100%;
@@ -216,6 +236,14 @@
 
 #draop .dropdown-item:hover{
   background-color: #393939;
+}
+
+.desk-item{
+    background-color: #1f1f1f;
+    border-radius: 10rem;
+    padding: .6rem;
+    transition: background-color 0.2s ease-in-out;
+    display: block;
 }
 }
 
@@ -306,3 +334,4 @@
 .navbar-nav.flex-column .nav-item {
   width: 100%;
 }
+
