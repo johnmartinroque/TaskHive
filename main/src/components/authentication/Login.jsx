@@ -11,6 +11,7 @@ import { doc, getDoc, serverTimestamp, setDoc } from "firebase/firestore";
 import "../../src_css/components/authentication/Login.css";
 function Login() {
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
@@ -134,6 +135,22 @@ function Login() {
                 placeholder="Your password"
                 type="password"
               />
+            <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  position: "absolute",
+                  right: "36%",
+                  top: "77.3%",
+                  background: "none",
+                  border: "none",
+                  color: "#f6f6f6",
+                  cursor: "pointer",
+                  boxShadow: "none",
+                }}
+              >
+                <i className={`bi ${showPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
+              </button>
             </div>
             <button id="main-way" onClick={userLogin}>
               <strong>Log in </strong>

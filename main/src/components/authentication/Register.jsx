@@ -8,6 +8,8 @@ import { doc, serverTimestamp, setDoc } from "firebase/firestore";
 function Register() {
   const [name, setName] = useState(""); // 👈 name input
   const [email, setEmail] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -67,7 +69,7 @@ function Register() {
   };
 
   return (
-    <div className="d-flex justify-content-center mt-1">
+    <div className="d-flex justify-content-center mt-5">
       <div id="login">
         <Row>
           <Col>
@@ -135,6 +137,22 @@ function Register() {
                   }
                 }}
               />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                style={{
+                  position: "absolute",
+                  right: "36%",
+                  top: "63.5%",
+                  background: "none",
+                  border: "none",
+                  color: "#f6f6f6",
+                  cursor: "pointer",
+                  boxShadow: "none",
+                }}
+              >
+                <i className={`bi ${showPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
+              </button>
             </div>
             <div className="mb-3">
               <label className="form-label">
@@ -152,6 +170,22 @@ function Register() {
                   }
                 }}
               />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                style={{
+                  position: "absolute",
+                  right: "36%",
+                  top: "77.3%",
+                  background: "none",
+                  border: "none",
+                  color: "#f6f6f6",
+                  cursor: "pointer",
+                  boxShadow: "none",
+                }}
+              >
+                <i className={`bi ${showConfirmPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
+              </button>
             </div>
             <button id="main-way" onClick={registerUser}>
               <strong>Register</strong>

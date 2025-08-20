@@ -154,6 +154,7 @@ function Header() {
           </div>
         </div>
       </nav>
+      {user && (
       <nav id="sidebar">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
@@ -173,6 +174,7 @@ function Header() {
           </li>
         </ul>
       </nav>
+      )}
     </div>
   );
 }
