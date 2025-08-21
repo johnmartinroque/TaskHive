@@ -118,12 +118,15 @@ function Login() {
                 placeholder="name@example.com"
               />
             </div>
-            <div className="mb-3">
-              <label htmlFor="textarea" className="form-label">
+            <div className="mb-3 position-relative">
+              <label htmlFor="password" className="form-label">
                 <h3>Password</h3>
               </label>
               <input
                 id="container"
+                type={showPassword ? "text" : "password"}
+                className="form-control"
+                placeholder="Your password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 onKeyDown={(e) => {
@@ -131,17 +134,14 @@ function Login() {
                     userLogin();
                   }
                 }}
-                className="form-control"
-                placeholder="Your password"
-                type="password"
               />
-            <button
+              <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 style={{
                   position: "absolute",
-                  right: "36%",
-                  top: "77.3%",
+                  right: "4%",
+                  top: "62%",
                   background: "none",
                   border: "none",
                   color: "#f6f6f6",
@@ -152,6 +152,7 @@ function Login() {
                 <i className={`bi ${showPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
               </button>
             </div>
+
             <button id="main-way" onClick={userLogin}>
               <strong>Log in </strong>
             </button>
