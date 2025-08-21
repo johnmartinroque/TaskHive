@@ -121,13 +121,13 @@ function Register() {
                 placeholder="name@example.com"
               />
             </div>
-            <div className="mb-3">
+            <div className="mb-3 position-relative">
               <label className="form-label">
                 <h3>Password</h3>
               </label>
               <input
                 id="container"
-                type="password"
+                type={showPassword ? "text" : "password"}
                 className="form-control"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
@@ -136,14 +136,15 @@ function Register() {
                     registerUser();
                   }
                 }}
+                placeholder="Your password"
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
                 style={{
                   position: "absolute",
-                  right: "36%",
-                  top: "63.5%",
+                  right: "4%",
+                  top: "62%",
                   background: "none",
                   border: "none",
                   color: "#f6f6f6",
@@ -154,13 +155,14 @@ function Register() {
                 <i className={`bi ${showPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
               </button>
             </div>
-            <div className="mb-3">
+
+            <div className="mb-3 position-relative">
               <label className="form-label">
                 <h3>Confirm Password</h3>
               </label>
               <input
                 id="container"
-                type="password"
+                type={showConfirmPassword ? "text" : "password"}
                 className="form-control"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
@@ -169,14 +171,15 @@ function Register() {
                     registerUser();
                   }
                 }}
+                placeholder="Confirm password"
               />
               <button
                 type="button"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
                 style={{
                   position: "absolute",
-                  right: "36%",
-                  top: "77.3%",
+                  right: "4%",
+                  top: "62%",
                   background: "none",
                   border: "none",
                   color: "#f6f6f6",
@@ -187,6 +190,7 @@ function Register() {
                 <i className={`bi ${showConfirmPassword ? "bi-eye-fill" : "bi-eye-slash-fill"}`}></i>
               </button>
             </div>
+
             <button id="main-way" onClick={registerUser}>
               <strong>Register</strong>
             </button>
