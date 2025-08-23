@@ -153,18 +153,19 @@ function Groups() {
         ))}
       </Row> */}
 
-      <Row className="mt-4">
-        <Col>
-          <h4>Create Group</h4>
+    <div className="d-flex justify-content-center">
+      <div id="login">
+          <h1>Create Group</h1>
           <input
+            id="container"
             placeholder="Input new group name"
             value={newGroupName}
             onChange={(e) => setNewGroupName(e.target.value)}
             className="form-control mb-2"
           />
-          <Button onClick={createGroup}>Create Group</Button>
-        </Col>
-      </Row>
+          <Button id="main-way" onClick={createGroup}><strong>Create Group</strong></Button>
+        </div>
+      </div>
     </Container>
   );
 }

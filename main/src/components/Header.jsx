@@ -101,18 +101,18 @@ function Header() {
               <li className="desk-item">
                 <Link to="/profile" className="nav-link active" aria-current="page">Profile</Link>
               </li>
-              <li className="desk-item">
+              {/* <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
-              </li>
+              </li> */}
               <li className="desk-item">
-                <Link to="/calendar" className="nav-link active bi bi-calendar2-week" aria-current="page"></Link>
+                <Link to="/calendar" className="nav-link active" aria-current="page">Calendar</Link>
               </li>
-              <li className="desk-item">
+              {/* <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-person-add" aria-current="page"></Link>
               </li>
               <li className="desk-item ">
                 <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
-              </li>
+              </li>*/}
               <li className="desk-item">
                 <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
               </li>
@@ -157,20 +157,20 @@ function Header() {
       {user && (
       <nav id="sidebar">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-          <li className="nav-item">
+          {/* <li className="nav-item">
             <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
-          </li>
+          </li> */}
           <li className="nav-item">
             <Link to="/calendar" className="nav-link active bi bi-calendar2-week" aria-current="page"></Link>
           </li>
           <li className="nav-item">
-            <Link to="/" className="nav-link active bi bi-person-add" aria-current="page"></Link>
+            <Link to="/createGroup" className="nav-link active bi bi-person-add" aria-current="page"></Link>
           </li>
           <li className="nav-item ">
-            <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
+            <Link to="/profile" className="nav-link active bi bi-gear" aria-current="page"></Link>
           </li>
           <li className="last-item">
-            <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
+            <Link onClick={handleLogout} className="nav-link active bi bi-box-arrow-left" aria-current="page"></Link>
           </li>
         </ul>
       </nav>
