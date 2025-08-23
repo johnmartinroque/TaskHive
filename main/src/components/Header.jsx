@@ -37,6 +37,13 @@ function Header() {
     }
   };
 
+  const closeNavbarCollapse = () => {
+    const navbarCollapse = document.getElementById("navbarSupportedContent");
+    if (navbarCollapse && navbarCollapse.classList.contains("show")) {
+      navbarCollapse.classList.remove("show");
+    }
+  };
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg bg-body-tertiary" id="nav">
@@ -67,6 +74,7 @@ function Header() {
               {user && (
                 <form
                   className="search-form d-flex"
+                  id="main-search-form"
                   role="search"
                   onSubmit={handleSearch}
                 >
@@ -99,8 +107,35 @@ function Header() {
               {user && (
               <ul className="navbar-nav me-auto mb-lg-0">
               <li className="desk-item">
-                <Link to="/profile" className="nav-link active" aria-current="page">Profile</Link>
+                <Link to="/profile"  className="nav-link active" aria-current="page">Profile</Link>
               </li>
+              <form
+                  className="search-form d-flex"
+                  role="search"
+                  onSubmit={handleSearch}
+                >
+                  <button
+                    className="btn btn-outline-success bi bi-search"
+                    type="submit"
+                    id="search-but-desk"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  ></button>
+                  <input
+                    id="search-form-desk"
+                    className={`form-control search-input ${
+                      searchTerm ? "has-value" : ""
+                    }`}
+                    type="search"
+                    placeholder="Search groups..."
+                    aria-label="Search"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </form>
               {/* <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
               </li> */}
@@ -114,7 +149,7 @@ function Header() {
                 <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
               </li>*/}
               <li className="desk-item">
-                <Link to="/createGroup" className="nav-link active bi bi-plus-lg" aria-current="page"></Link>
+                <Link to="/createGroup" className="nav-link active" aria-current="page">Create Group</Link>
               </li>
               <li className="desk-item">
                 <Link onClick={handleLogout} className="nav-link active" aria-current="page">Logout</Link>
