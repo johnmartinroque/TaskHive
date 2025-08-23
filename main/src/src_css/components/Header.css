@@ -318,3 +318,7 @@
   width: 100%;
 }
 
+
+input[type="search"]::-webkit-search-cancel-button {
+  filter: invert(1); 
+}
