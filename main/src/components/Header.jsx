@@ -106,9 +106,16 @@ function Header() {
 
               {user && (
               <ul className="navbar-nav me-auto mb-lg-0">
-              <li className="desk-item">
-                <Link to="/profile"  className="nav-link active" aria-current="page">Profile</Link>
-              </li>
+              <button 
+              className="desk-item nav-link active"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => navigate('/profile')}>
+                Profile
+              </button>
               <form
                   className="search-form d-flex"
                   role="search"
@@ -139,21 +146,42 @@ function Header() {
               {/* <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
               </li> */}
-              <li className="desk-item">
-                <Link to="/calendar" className="nav-link active" aria-current="page">Calendar</Link>
-              </li>
+              <button 
+              className="desk-item nav-link active"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => navigate('/calendar')}>
+                Calendar
+              </button>
               {/* <li className="desk-item">
                 <Link to="/" className="nav-link active bi bi-person-add" aria-current="page"></Link>
               </li>
               <li className="desk-item ">
                 <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
               </li>*/}
-              <li className="desk-item">
-                <Link to="/createGroup" className="nav-link active" aria-current="page">Create Group</Link>
-              </li>
-              <li className="desk-item">
-                <Link onClick={handleLogout} className="nav-link active" aria-current="page">Logout</Link>
-              </li>
+              <button 
+              className="desk-item nav-link active"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={() => navigate('/createGroup')}>
+                Create Group
+              </button>
+              <button 
+              className="desk-item nav-link active"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+              onClick={handleLogout}>
+                Calendar
+              </button>
             </ul>
             )}
 
