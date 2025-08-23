@@ -190,10 +190,35 @@ function Header() {
               aria-expanded="false"
               aria-label="Toggle navigation"
               onClick={handleLogout}>
-                Calendar
+                Logout
               </button>
             </ul>
             )}
+
+            {!user && (
+                <ul className="navbar-nav me-auto mb-lg-0">
+                  <button 
+                  className="desk-item nav-link active"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  onClick={() => navigate('/login')}>
+                    Log in
+                  </button>
+                  <button 
+                  className="desk-item nav-link active"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent"
+                  aria-expanded="false"
+                  aria-label="Toggle navigation"
+                  onClick={() => navigate('/register')}>
+                    Sign up
+                  </button>
+                </ul>
+              )}
 
               {user && (
                 <div className="search-form d-flex" id="rightest">
