@@ -86,7 +86,7 @@ function Search() {
 
   return (
     <Container className="mt-4">
-      <h2>Search Results for "{searchQuery}"</h2>
+      <h1>Search Results for "{searchQuery}"</h1>
       <Row className="mt-3">
         {loading ? (
           <div className="text-center my-5">
@@ -96,28 +96,29 @@ function Search() {
         ) : filteredGroups.length > 0 ? (
           filteredGroups.map((group) => (
             <Col key={group.id} md={4} className="mb-3">
-              <Card>
-                <Card.Body>
-                  <h5>{group.groupName}</h5>
-                  <Link to={`/group/${group.id}`}>View Group</Link>
-                  <div className="mt-2">
-                    {group.members?.some((m) => m.id === userId) ? (
-                      <Button variant="secondary" disabled>
-                        {group.members.find((m) => m.id === userId)?.role ===
-                        "pending"
-                          ? "Pending"
-                          : "Member"}
-                      </Button>
-                    ) : pendingGroupIds.includes(group.id) ? (
-                      <Button variant="warning" disabled>
-                        Pending
-                      </Button>
-                    ) : (
-                      <Button onClick={() => joinGroup(group.id)}>Join</Button>
-                    )}
-                  </div>
-                </Card.Body>
-              </Card>
+              <Link to={`/group/${group.id}`} className="group-link">
+                <Card className="group-card">
+                  <Card.Body>
+                    <h3>{group.groupName}</h3>
+                    <div className="mt-2">
+                      {group.members?.some((m) => m.id === userId) ? (
+                        <Button variant="secondary" disabled id="main-way">
+                          {group.members.find((m) => m.id === userId)?.role ===
+                          "pending"
+                            ? "Pending"
+                            : "Member"}
+                        </Button>
+                      ) : pendingGroupIds.includes(group.id) ? (
+                        <Button variant="warning" disabled>
+                          Pending
+                        </Button>
+                      ) : (
+                        <Button onClick={() => joinGroup(group.id)}>Join</Button>
+                      )}
+                    </div>
+                  </Card.Body>
+                </Card>
+              </Link>
             </Col>
           ))
         ) : (
