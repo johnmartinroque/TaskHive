@@ -42,10 +42,14 @@
     transition: background-color 0.2s ease-in-out;
     display: none;
     color: "white" !important;
+    color: #f6f6f6 !important;
+    font-family: 'Roboto', sans-serif;
+    border: none;
 }
 
 .desk-item:hover{
     background-color: #393939;
+    
 }
 
 .desk-item:active{

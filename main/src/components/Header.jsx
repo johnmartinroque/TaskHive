@@ -107,7 +107,7 @@ function Header() {
               {user && (
               <ul className="navbar-nav me-auto mb-lg-0">
               <button 
-              className="desk-item nav-link active"
+              className="desk-item"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -117,7 +117,7 @@ function Header() {
                 Home
               </button>
               <button 
-              className="desk-item nav-link active"
+              className="desk-item"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -157,7 +157,7 @@ function Header() {
                 <Link to="/" className="nav-link active bi bi-activity" aria-current="page"></Link>
               </li> */}
               <button 
-              className="desk-item nav-link active"
+              className="desk-item"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -173,7 +173,7 @@ function Header() {
                 <Link to="/" className="nav-link active bi bi-gear" aria-current="page"></Link>
               </li>*/}
               <button 
-              className="desk-item nav-link active"
+              className="desk-item"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
@@ -183,7 +183,7 @@ function Header() {
                 Create Group
               </button>
               <button 
-              className="desk-item nav-link active"
+              className="desk-item"
               data-bs-toggle="collapse"
               data-bs-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"

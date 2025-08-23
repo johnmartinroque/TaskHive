@@ -1,0 +1,28 @@
+.calendar-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+.react-calendar {
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  background-color: #1f1f1f;
+  color: white !important;
+}
+
+.deadline-count {
+  background-color: #e74c3c;
+  color: white !important;
+  border-radius: 8px;
+  padding: 2px 5px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.task-list {
+  margin-top: 2rem;
+  width: 100%;
+}
+

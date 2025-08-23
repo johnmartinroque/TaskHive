@@ -4,6 +4,7 @@ import "react-calendar/dist/Calendar.css";
 import { db } from "../../firebase";
 import { collection, getDocs } from "firebase/firestore";
 import TaskCard from "./TaskCard";
+import "../../src_css/components/task/TaskCalendar.css";
 
 function TaskCalendar() {
   const [deadlineCounts, setDeadlineCounts] = useState({});
