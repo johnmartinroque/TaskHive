@@ -64,9 +64,8 @@ function TaskCalendar() {
       return (
         <div
           className="deadline-count"
-          style={{ fontSize: "0.7rem", color: "red" }}
         >
-          {deadlineCounts[key]} task{deadlineCounts[key] > 1 ? "s" : ""}
+          {deadlineCounts[key]}{deadlineCounts[key] > 1 ? "" : ""}
         </div>
       );
     }
