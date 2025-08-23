@@ -113,6 +113,16 @@ function Header() {
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
               aria-label="Toggle navigation"
+              onClick={() => navigate('/')}>
+                Home
+              </button>
+              <button 
+              className="desk-item nav-link active"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
               onClick={() => navigate('/profile')}>
                 Profile
               </button>
