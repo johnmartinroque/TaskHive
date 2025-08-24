@@ -16,6 +16,7 @@ function ProfilePicture() {
     "/images/avatar3.jpeg",
     "/images/avatar4.jpeg",
     "/images/avatar5.jpeg",
+    "/images/avatar6.jpeg",
   ];
 
   useEffect(() => {
