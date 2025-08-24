@@ -198,7 +198,7 @@ function Header() {
             {!user && (
                 <ul className="navbar-nav me-auto mb-lg-0">
                   <button 
-                  className="desk-item nav-link active"
+                  className="desk-item"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent"
@@ -208,7 +208,7 @@ function Header() {
                     Log in
                   </button>
                   <button 
-                  className="desk-item nav-link active"
+                  className="desk-item"
                   data-bs-toggle="collapse"
                   data-bs-target="#navbarSupportedContent"
                   aria-controls="navbarSupportedContent"
