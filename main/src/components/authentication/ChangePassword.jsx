@@ -49,7 +49,7 @@ function ChangePassword() {
     <div className="container-fluid d-flex justify-content-center mt-5 px-3">
       <div
         className="rounded p-4 shadow w-100"
-        style={{ maxWidth: "600px", backgroundColor: "#393939" }}
+        style={{ maxWidth: "600px", backgroundColor: "#1f1f1f" }}
       >
         <Row>
           <Col>
@@ -66,14 +66,7 @@ function ChangePassword() {
                 placeholder="Current Password"
                 value={currentPassword}
                 onChange={(e) => setCurrentPassword(e.target.value)}
-                style={{
-                  borderRadius: "10rem",
-                  border: "none",
-                  padding: "1rem",
-                  backgroundColor: "#1f1f1f",
-                  color: "#f6f6f6",
-                  paddingRight: "3rem",
-                }}
+                id="container"
               />
               <button
                 type="button"
@@ -108,14 +101,7 @@ function ChangePassword() {
                 placeholder="New Password"
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
-                style={{
-                  borderRadius: "10rem",
-                  border: "none",
-                  padding: "1rem",
-                  backgroundColor: "#1f1f1f",
-                  color: "#f6f6f6",
-                  paddingRight: "3rem",
-                }}
+                id="container"
               />
               <button
                 type="button"

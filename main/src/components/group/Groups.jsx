@@ -153,9 +153,9 @@ function Groups() {
         ))}
       </Row> */}
 
-    <div className="d-flex justify-content-center">
-      <div id="login">
-          <h1>Create Group</h1>
+    <div className="container-fluid d-flex justify-content-center mt-5 px-3">
+      <div id="login" style={{borderRadius:".4rem"}}>
+          <h1 style={{ textAlign: "center" }}>Create Group</h1>
           <input
             id="container"
             placeholder="Input new group name"
@@ -163,7 +163,7 @@ function Groups() {
             onChange={(e) => setNewGroupName(e.target.value)}
             className="form-control mb-2"
           />
-          <Button id="main-way" onClick={createGroup}><strong>Create Group</strong></Button>
+          <button className="mt-3" id="main-way" onClick={createGroup}>Create Group</button>
         </div>
       </div>
     </Container>
