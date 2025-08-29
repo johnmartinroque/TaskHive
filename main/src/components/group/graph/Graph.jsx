@@ -68,7 +68,7 @@ function Graph({ selectedGroupId }) {
       <ResponsiveContainer
         width="100%"
         height={300}
-        style={{ paddingRight: "3rem", marginTop: "2rem", height: "100%",  }}
+        style={{ paddingRight: "3rem", marginTop: "2rem", height: "100%"}}
       >
         <BarChart data={chartData}>
           <XAxis dataKey="name" fontWeight={600} />
