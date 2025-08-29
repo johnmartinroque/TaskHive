@@ -24,14 +24,16 @@ function GroupMembers({ members, isAdmin, handleRemoveMember }) {
               <div className="invite-text">({member.role})</div>
             </div>
             <div className="invite-btn-group">
-              <button
-              className="invite-decline-btn btn btn-danger btn-sm"
-              variant="danger"
-              size="sm"
-              onClick={() => handleRemoveMember(member)}
-            >
-              Remove
-            </button>
+              {isAdmin && (
+                <button
+                  className="invite-decline-btn btn btn-danger btn-sm"
+                  variant="danger"
+                  size="sm"
+                  onClick={() => handleRemoveMember(member)}
+                >
+                  Remove
+                </button>
+              )}
             </div>
           </li>
         ))}

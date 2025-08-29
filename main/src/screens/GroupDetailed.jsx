@@ -30,7 +30,7 @@ function GroupDetailed() {
 
   const navigate = useNavigate();
 
-  const auth = getAuth(); 
+  const auth = getAuth();
   const user = auth.currentUser;
 
   const leaveGroup = async () => {
@@ -174,7 +174,7 @@ function GroupDetailed() {
         isAdmin={isAdmin}
         handleRemoveMember={requestRemoveMember}
       />
-
+      <InviteMembers />
       <RemoveMember
         show={showRemoveModal}
         onClose={() => setShowRemoveModal(false)}
@@ -182,42 +182,42 @@ function GroupDetailed() {
         name={memberToRemove?.name || "this member"}
       />
 
-<Row>
-  <Col xs={12} md={6} className="mb-3">
-    <AddTask groupId={group.id} groupName={group.groupName} />
-  </Col>
-  <Col xs={12} md={6} className="mb-3">
-    <Graph selectedGroupId={group.id} />
-  </Col>
-</Row>
+      <Row>
+        <Col xs={12} md={6} className="mb-3">
+          <AddTask groupId={group.id} groupName={group.groupName} />
+        </Col>
+        <Col xs={12} md={6} className="mb-3">
+          <Graph selectedGroupId={group.id} />
+        </Col>
+      </Row>
 
       <Row className="mt-5 bottom-one">
-  <Col xs={12} md={6} className="mb-3">
-    <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
-      <h1 className="mb-2 text-end text-md-start w-100">Group Tasks</h1>
-      {isAuthorized && (
-        <Button
-          id="buttones"
-          variant="warning"
-          className="mb-2 ms-md-auto"
-          onClick={() => setShowLeaveModal(true)}
-          disabled={
-            isAdmin &&
-            group.members.filter((m) => m.role === "admin").length === 1
-          }
-        >
-          <h4>Leave Group</h4>
-        </Button>
-      )}
-    </div>
+        <Col xs={12} md={6} className="mb-3">
+          <div className="d-flex flex-column flex-md-row justify-content-between align-items-md-center">
+            <h1 className="mb-2 text-end text-md-start w-100">Group Tasks</h1>
+            {isAuthorized && (
+              <Button
+                id="buttones"
+                variant="warning"
+                className="mb-2 ms-md-auto"
+                onClick={() => setShowLeaveModal(true)}
+                disabled={
+                  isAdmin &&
+                  group.members.filter((m) => m.role === "admin").length === 1
+                }
+              >
+                <h4>Leave Group</h4>
+              </Button>
+            )}
+          </div>
 
-    <GroupTasks groupId={group.id} />
-  </Col>
+          <GroupTasks groupId={group.id} />
+        </Col>
 
-  <Col xs={12} md={6} className="mb-3">
-    <FinishedTasks />
-  </Col>
-</Row>
+        <Col xs={12} md={6} className="mb-3">
+          <FinishedTasks />
+        </Col>
+      </Row>
 
       <LeaveGroup
         show={showLeaveModal}
@@ -226,7 +226,7 @@ function GroupDetailed() {
         title="Leave Group Confirmation"
         body={`Are you sure you want to leave "${group.groupName}"?`}
       />
-      
+
       <Chat groupId={group.id} groupMembers={group.members} />
     </div>
   );
