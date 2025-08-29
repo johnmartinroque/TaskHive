@@ -174,7 +174,7 @@ function GroupDetailed() {
         isAdmin={isAdmin}
         handleRemoveMember={requestRemoveMember}
       />
-      <InviteMembers />
+      <InviteMembers group={group} />
       <RemoveMember
         show={showRemoveModal}
         onClose={() => setShowRemoveModal(false)}
