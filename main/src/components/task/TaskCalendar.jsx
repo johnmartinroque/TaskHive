@@ -1,16 +1,18 @@
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
-import { db } from "../../firebase";
-import { collection, getDocs } from "firebase/firestore";
+import { db, auth } from "../../firebase";
+import { collection, getDocs, query, where } from "firebase/firestore";
 import TaskCard from "./TaskCard";
 import "../../src_css/components/task/TaskCalendar.css";
+import { onAuthStateChanged } from "firebase/auth";
 
 function TaskCalendar() {
   const [deadlineCounts, setDeadlineCounts] = useState({});
   const [loading, setLoading] = useState(true);
   const [selectedDate, setSelectedDate] = useState(null);
   const [tasksByDate, setTasksByDate] = useState({});
+  const [userId, setUserId] = useState(null);
 
   // ✅ Format local date as YYYY-MM-DD
   const formatLocalDate = (date) => {
@@ -24,15 +26,59 @@ function TaskCalendar() {
   };
 
   useEffect(() => {
-    const fetchTasksWithDeadlines = async () => {
-      try {
-        const tasksSnapshot = await getDocs(collection(db, "tasks"));
-        const counts = {};
-        const tasksMap = {};
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (user) {
+        setUserId(user.uid);
+        await fetchTasks(user.uid);
+      } else {
+        setUserId(null);
+        setDeadlineCounts({});
+        setTasksByDate({});
+        setLoading(false);
+      }
+    });
 
-        tasksSnapshot.forEach((docSnap) => {
+    return () => unsubscribe();
+  }, []);
+
+  const fetchTasks = async (uid) => {
+    try {
+      setLoading(true);
+
+      // Get the groups the user is a member of
+      const groupsSnapshot = await getDocs(collection(db, "groups"));
+
+      const userGroups = groupsSnapshot.docs
+        .map((doc) => {
+          const data = doc.data();
+          const userMember = (data.members || []).find((m) => m.id === uid);
+          return userMember && userMember.role !== "pending"
+            ? {
+                id: doc.id,
+                name: data.groupName,
+              }
+            : null;
+        })
+        .filter(Boolean);
+
+      const tasksRef = collection(db, "tasks");
+      const counts = {};
+      const tasksMap = {};
+
+      // Fetch tasks for each group the user is a member of
+      for (const group of userGroups) {
+        const q = query(tasksRef, where("groupId", "==", group.id));
+        const taskSnap = await getDocs(q);
+
+        taskSnap.forEach((docSnap) => {
           const task = docSnap.data();
           const deadlineStr = task.deadline;
+
+          const progress = task.progress;
+
+          if (progress === "Finished") {
+            return;
+          }
 
           if (deadlineStr) {
             const date = new Date(deadlineStr);
@@ -44,28 +90,25 @@ function TaskCalendar() {
             }
           }
         });
-
-        setDeadlineCounts(counts);
-        setTasksByDate(tasksMap);
-      } catch (err) {
-        console.error("Error fetching tasks with deadlines:", err);
-      } finally {
-        setLoading(false);
       }
-    };
 
-    fetchTasksWithDeadlines();
-  }, []);
+      setDeadlineCounts(counts);
+      setTasksByDate(tasksMap);
+    } catch (err) {
+      console.error("Error fetching tasks with deadlines:", err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   const tileContent = ({ date, view }) => {
     if (view !== "month") return null;
     const key = formatLocalDate(date);
     if (deadlineCounts[key]) {
       return (
-        <div
-          className="deadline-count"
-        >
-          {deadlineCounts[key]}{deadlineCounts[key] > 1 ? "" : ""}
+        <div className="deadline-count">
+          {deadlineCounts[key]}
+          {deadlineCounts[key] > 1 ? "" : ""}
         </div>
       );
     }
