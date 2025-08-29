@@ -150,7 +150,7 @@
   right: 1.5rem;
   display: flex;
 }
-
+  
 #rightest h5{
   color:#f6f6f6;
   margin: 1rem 1rem;
@@ -223,6 +223,14 @@
   transition: background-color 0.2s ease-in-out;
 }
 
+#search-but:hover{
+    background-color: #393939;
+}
+
+#search-but:active{
+    background-color: #1f1f1f;
+}
+
 #search-but-desk{
   background-color: #1f1f1f;
   border: none;
@@ -234,11 +242,21 @@
   display: none;
 }
 
-#search-but:hover{
+#search-but-user{
+  background-color: #1f1f1f;
+  border: none;
+  color: #f6f6f6;
+  height: 3.8rem;
+  border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#search-but-user:hover{
     background-color: #393939;
 }
 
-#search-but:active{
+#search-but-user:active{
     background-color: #1f1f1f;
 }
 
@@ -262,7 +280,21 @@
   color: white;
 }
 
+#search-form-user{
+  border-radius: 10rem;
+  border: none;
+  padding: 1rem;
+  width: 15vw;
+  margin-right: 0.5rem;
+  background-color: #1f1f1f;
+}
+
+
 #search-form:focus, #search-form.has-value, #search-form:active{
+  color: #f6f6f6 !important;
+}
+
+#search-form-user:focus, #search-form-user.has-value, #search-form-user:active{
   color: #f6f6f6 !important;
 }
 

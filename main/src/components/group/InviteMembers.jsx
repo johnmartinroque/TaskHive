@@ -83,41 +83,45 @@ function InviteMembers({ group }) {
 
   return (
     <div className="my-4">
-      <h4>Invite Members</h4>
+      <h1>Invite Members</h1>
       <InputGroup className="mb-3">
         <Form.Control
+          id="search-form-user"
           type="text"
           placeholder="Search users by name or email"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <Button onClick={handleSearch}>Search</Button>
+        <button id="search-but-user" className="btn btn-outline-success bi bi-search" onClick={handleSearch}></button>
       </InputGroup>
 
       {successMessage && <p className="text-success">{successMessage}</p>}
 
       {searchResults.length > 0 && (
-        <ListGroup>
-          {searchResults.map((user) => (
-            <ListGroup.Item
-              key={user.uid}
-              className="d-flex justify-content-between align-items-center"
-            >
-              <div>
-                <strong>{user.name}</strong>
-                <div className="text-muted small">{user.email}</div>
-              </div>
-              <Button
-                size="sm"
-                onClick={() => handleInvite(user)}
-                disabled={invitingId === user.uid}
-              >
-                {invitingId === user.uid ? "Inviting..." : "Invite"}
-              </Button>
-            </ListGroup.Item>
-          ))}
-        </ListGroup>
-      )}
+  <ul className="invitations-list requests-grid list-unstyled">
+    {searchResults.map((user) => (
+      <li
+        key={user.uid}
+        className="request-list-item d-flex justify-content-between align-items-center"
+      >
+        <div>
+          <h4>{user.name}</h4>
+          <div className="invite-text text-muted small">{user.email}</div>
+        </div>
+        <div className="invite-btn-group">
+          <button
+            className="btn btn-warning invite-decline-btn btn-sm"
+            onClick={() => handleInvite(user)}
+            disabled={invitingId === user.uid}
+          >
+            {invitingId === user.uid ? "Inviting..." : "Invite"}
+          </button>
+        </div>
+      </li>
+    ))}
+  </ul>
+)}
+
     </div>
   );
 }
