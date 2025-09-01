@@ -1,4 +1,4 @@
-# 🍽️ Taskhive
+# 📝 Taskhive
 
 A full-stack collaboration platform for managing groups, tasks, and deadlines. Built with React, Firebase Firestore, and React-Bootstrap. Users can join or create groups, manage tasks, track deadlines, view analytics, and communicate with group members in real-time.
 
