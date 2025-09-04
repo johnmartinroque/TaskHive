@@ -50,3 +50,35 @@ A full-stack collaboration platform for managing groups, tasks, and deadlines. B
 - **Authentication:** Firebase Authentication
 
 
+## 🏃 How to Run
+### Installation
+1️⃣ Clone the repository
+```bash
+git clone https://github.com/johnmartinroque/TaskHive.git
+cd Taskhive
+```
+
+2️⃣ Install dependencies
+```bash
+#Frontend (React app)
+cd main
+npm install
+```
+
+3️⃣ Configure environment variables
+```bash
+# Inside the frontend folder, create a `.env` file with your project settings
+REACT_APP_FIREBASE_API_KEY=YOUR_FIREBASE_API_KEY
+REACT_APP_FIREBASE_AUTH_DOMAIN=YOUR_FIREBASE_AUTH_DOMAIN
+REACT_APP_FIREBASE_PROJECT_ID=YOUR_FIREBASE_PROJECT_ID
+REACT_APP_FIREBASE_STORAGE_BUCKET=YOUR_FIREBASE_STORAGE_BUCKET
+REACT_APP_FIREBASE_MESSAGING_SENDER_ID=YOUR_FIREBASE_MESSAGING_SENDER_ID
+REACT_APP_FIREBASE_APP_ID=YOUR_FIREBASE_APP_ID
+```
+
+
+4️⃣ Start the frontend (React app)
+```bash
+#From the main folder:
+npm start
+```
