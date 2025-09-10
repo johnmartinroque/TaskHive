@@ -3,7 +3,7 @@ import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "../../firebase";
 
 function UserAvatar({ size = 40, rounded = true, style = {} }) {
-  const [avatarUrl, setAvatarUrl] = useState("/images/default-avatar.jpeg");
+  const [avatarUrl, setAvatarUrl] = useState("/images/avatar1.jpeg");
 
   useEffect(() => {
     const fetchAvatar = async () => {
@@ -15,12 +15,10 @@ function UserAvatar({ size = 40, rounded = true, style = {} }) {
           if (docSnap.exists()) {
             const data = docSnap.data();
             setAvatarUrl(
-              data.profilePicture ||
-                user.photoURL ||
-                "/images/default-avatar.jpeg"
+              data.profilePicture || user.photoURL || "/images/avatar1.jpeg"
             );
           } else {
-            setAvatarUrl(user.photoURL || "/images/default-avatar.jpeg");
+            setAvatarUrl(user.photoURL || "/images/avatar1.jpeg");
           }
         } catch (error) {
           console.error("Error fetching avatar:", error);
