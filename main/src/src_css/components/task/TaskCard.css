@@ -6,18 +6,15 @@
   text-align: center;
   border-radius: 1.2rem !important;
   color: #f6f6f6;
-
   background: rgba(255, 255, 255, 0.05) !important;
   border: 1px solid rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-
   box-shadow:
     inset 0 0 0.5px rgba(255, 255, 255, 0.25),
     inset 0 0 5px rgba(255, 255, 255, 0.06),
     0 8px 16px rgba(0, 0, 0, 0.4),
     0 4px 6px rgba(255, 255, 255, 0.03);
-
   transition: all 0.3s ease;
   cursor: pointer;
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);

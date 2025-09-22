@@ -116,43 +116,6 @@ function Groups() {
   }, [user]);
 
   return (
-    <Container>
-      {/* 
-      <Row className="mb-4">
-        <Col>
-          <h1>Groups</h1>
-        </Col>
-      </Row> */}
-
-      {/*   <Row>
-        {groupList.map((group) => (
-          <Col key={group.id} md={4} className="mb-3">
-            <Card>
-              <Card.Body>
-                <h5>{group.groupName}</h5>
-                <Link to={`/group/${group.id}`}>View Group</Link>
-                <div className="mt-2">
-                  {group.members?.some((m) => m.id === userId) ? (
-                    <Button variant="secondary" disabled>
-                      {group.members.find((m) => m.id === userId)?.role ===
-                      "pending"
-                        ? "Pending"
-                        : "Member"}
-                    </Button>
-                  ) : pendingGroupIds.includes(group.id) ? (
-                    <Button variant="warning" disabled>
-                      Pending
-                    </Button>
-                  ) : (
-                    <Button onClick={() => joinGroup(group.id)}>Join</Button>
-                  )}
-                </div>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row> */}
-
     <div className="container-fluid d-flex justify-content-center mt-5 px-3">
       <div id="login" style={{borderRadius:".4rem"}}>
           <h1 style={{ textAlign: "center" }}>Create Group</h1>
@@ -166,7 +129,6 @@ function Groups() {
           <button className="mt-3" id="main-way" onClick={createGroup}>Create Group</button>
         </div>
       </div>
-    </Container>
   );
 }
 

@@ -48,8 +48,7 @@ function ChangePassword() {
   return (
     <div className="container-fluid d-flex justify-content-center mt-5 px-3">
       <div
-        className="rounded p-4 shadow w-100"
-        style={{ maxWidth: "600px", backgroundColor: "#1f1f1f" }}
+        id="login"
       >
         <Row>
           <Col>
