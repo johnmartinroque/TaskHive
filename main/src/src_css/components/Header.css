@@ -253,8 +253,8 @@
 #search-but{
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
   color: rgba(255, 255, 255, 0.9);
   text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
