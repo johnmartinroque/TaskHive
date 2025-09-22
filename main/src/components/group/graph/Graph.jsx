@@ -64,7 +64,7 @@ return (
   <div
     style={{
       padding: "2rem",
-      background: "rgba(0, 0, 0, 0.01)",
+      background: "rgba(255,255,255, 0.05)",
       borderRadius: "0.75rem",
       height: "100%",
       backdropFilter: "blur(8px)",

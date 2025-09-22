@@ -38,7 +38,7 @@ function Home() {
             to={`/group/${selectedGroupId}`}
             className="text-decoration-none text-dark"
           >
-            <div className="graph-container">
+            <div>
               <Graph selectedGroupId={selectedGroupId} />
             </div>
           </Link>
