@@ -2,21 +2,44 @@
   margin: 1.25rem auto;
   padding: 1rem 1rem 0rem 1rem;
   max-width: 31.25rem;
+  min-height: 19.5rem;
   text-align: center;
   border-radius: 1.2rem !important;
-  background-color: #1f1f1f !important;
-  min-height: 19.5rem;
-  box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
--webkit-box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
--moz-box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
+  color: #f6f6f6;
+
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 0 0.5px rgba(255, 255, 255, 0.25),
+    inset 0 0 5px rgba(255, 255, 255, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    0 4px 6px rgba(255, 255, 255, 0.03);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
 }
 
-.task-link:hover{
-    transform: scale(1.02);
+.task-link:hover .task-carda {
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 6px 8px rgba(255, 255, 255, 0.05);
 }
 
-.task-link:active{
-    transform: scale(1);
+.task-link:active .task-carda {
+  background: rgba(255, 255, 255, 0.06) !important;
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .task-carda h5 {
@@ -121,11 +144,42 @@
   padding: 1rem 1rem 0rem 1rem;
   max-width: 61.25rem;
   text-align: left;
-  border-radius: .5rem !important;
-  background-color: #1f1f1f !important;
-  box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
--webkit-box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
--moz-box-shadow: 0px -2px 6px -2px rgba(0, 0, 0, 0.26) inset;
+  border-radius: 0.75rem !important;
+  color: #f6f6f6;
+
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 0 0.5px rgba(255, 255, 255, 0.25),
+    inset 0 0 5px rgba(255, 255, 255, 0.06),
+    0 8px 16px rgba(0, 0, 0, 0.4),
+    0 4px 6px rgba(255, 255, 255, 0.03);
+
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.group-task-carda:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  transform: translateY(-2px);
+  box-shadow:
+    inset 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.5),
+    0 6px 8px rgba(255, 255, 255, 0.05);
+}
+
+.group-task-carda:active {
+  background: rgba(255, 255, 255, 0.06) !important;
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    inset 0 2px 4px rgba(0, 0, 0, 0.5),
+    inset 0 0 8px rgba(255, 255, 255, 0.1),
+    0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .group-task h1{
