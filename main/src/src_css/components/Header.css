@@ -18,20 +18,47 @@
   padding-top: 2rem;
 }
 
-.nav-item{
-    background-color: #1f1f1f;
+.nav-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
     border-radius: 10rem;
-    margin:0.5rem .5rem;
-    padding: .6rem;
-    transition: background-color 0.2s ease-in-out;
+    margin: 0.5rem;
+    padding: 0.6rem 1.4rem;
+
+    box-shadow: 
+        inset 0 0 0.5px rgba(255, 255, 255, 0.3),
+        inset 0 0 5px rgba(255, 255, 255, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.5), 
+        0 4px 6px rgba(255, 255, 255, 0.05);
+
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+
+    transition: all 0.3s ease;
+    cursor: pointer;
+    user-select: none;
 }
 
-.nav-item:hover{
-    background-color: #393939;
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 
+        inset 0 0 1px rgba(255, 255, 255, 0.4),
+        inset 0 0 6px rgba(255, 255, 255, 0.15),
+        0 10px 20px rgba(0, 0, 0, 0.6),
+        0 6px 8px rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
 }
 
-.nav-item:active{
-    background-color: #1f1f1f;
+.nav-item:active {
+    transform: translateY(1px) scale(0.98);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.5),
+        inset 0 0 8px rgba(255, 255, 255, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.4);
+    background: rgba(255, 255, 255, 0.06);
 }
 
 .desk-item{
@@ -57,7 +84,6 @@
 }
 
 #sidebar .nav-item{
-    background-color: #1f1f1f;
     margin-left: 1.8rem;
     margin-top: 2vh;
     border-radius: 10rem;
@@ -69,19 +95,9 @@
     border-radius: 50%;
     aspect-ratio: 1 / 1;
     font-size: x-large !important;
-    transition: background-color 0.2s ease-in-out;
-}
-
-#sidebar .nav-item:hover{
-    background-color: #393939;
-}
-
-#sidebar .nav-item:active{
-    background-color: #1f1f1f;
 }
 
 .last-item{
-    background-color: #1f1f1f;
     margin-left: 1.8rem;
     border-radius: 10rem;
     padding: .3rem;
@@ -94,16 +110,6 @@
     font-size: x-large !important;
     position: fixed;
     bottom: 4rem;
-    transition: background-color 0.2s ease-in-out;
-}
-
-
-#sidebar .last-item:hover{
-    background-color: #393939;
-}
-
-#sidebar .last-item:active{
-    background-color: #1f1f1f;
 }
 
 #last-main{
@@ -214,27 +220,56 @@
 }
 
 #search-but{
-  background-color: #1f1f1f;
-  border: none;
-  color: #f6f6f6;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 
+        inset 0 0 0.5px rgba(255, 255, 255, 0.3),
+        inset 0 0 5px rgba(255, 255, 255, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 4px 6px rgba(255, 255, 255, 0.05);
   height: 3.8rem;
   border-radius: 50%;
   aspect-ratio: 1 / 1;
-  transition: background-color 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 #search-but:hover{
-    background-color: #393939;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 
+      inset 0 0 1px rgba(255, 255, 255, 0.4),
+      inset 0 0 6px rgba(255, 255, 255, 0.15),
+      0 10px 20px rgba(0, 0, 0, 0.6),
+      0 6px 8px rgba(255, 255, 255, 0.05);
+  transform: translateY(-2px);
 }
 
 #search-but:active{
-    background-color: #1f1f1f;
+  transform: translateY(1px) scale(0.98);
+  box-shadow: 
+      inset 0 2px 4px rgba(0, 0, 0, 0.5),
+      inset 0 0 8px rgba(255, 255, 255, 0.1),
+      0 2px 4px rgba(0, 0, 0, 0.4);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 #search-but-desk{
-  background-color: #1f1f1f;
-  border: none;
-  color: #f6f6f6;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 
+        inset 0 0 0.5px rgba(255, 255, 255, 0.3),
+        inset 0 0 5px rgba(255, 255, 255, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 4px 6px rgba(255, 255, 255, 0.05);
   height: 3.8rem;
   border-radius: 50%;
   aspect-ratio: 1 / 1;

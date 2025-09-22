@@ -267,7 +267,7 @@ function Header() {
           <li className="nav-item ">
             <Link to="/profile" className="nav-link active bi bi-gear" aria-current="page"></Link>
           </li>
-          <li className="last-item">
+          <li className="last-item nav-item">
             <Link onClick={handleLogout} className="nav-link active bi bi-box-arrow-left" aria-current="page"></Link>
           </li>
         </ul>
