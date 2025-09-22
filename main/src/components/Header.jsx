@@ -46,8 +46,8 @@ function Header() {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary" id="nav">
-        <div className="container-fluid" style={{backgroundColor:"black"}}>
+      <nav className="navbar navbar-expand-lg" id="nav">
+        <div className="container-fluid">
           <Link to="/" className="navbar-brand">
             <img src={HiveTaskLogo} alt="HiveTask Logo" id="Logo" />
           </Link>

@@ -111,7 +111,7 @@ function TaskDetailed() {
 
   return (
     <Container className="my-5 d-flex justify-content-center align-items-center">
-      <Card style={{textAlign: "center", borderRadius: "1.2rem", backgroundColor: "#1f1f1f", padding:"1.5rem", width:"70vh"}}>
+      <Card id="login" className="text-center">
         <Card.Body>
           <h1 style={{marginBottom: "1rem", color: "#f6f6f6"}}>{task.name}</h1>
           <Card.Subtitle className="mb-2" style={{color: "#f6f6f6"}}>

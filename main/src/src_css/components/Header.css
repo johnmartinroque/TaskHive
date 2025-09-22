@@ -1,5 +1,4 @@
 #nav{
-    background-color: black !important;
     position: fixed;
     width: 100%;
     z-index: 9999;
@@ -13,8 +12,7 @@
   width: 7.1rem;                 
   position: fixed;              
   top: 0;
-  left: 0;
-  background-color: black;      
+  left: 0;     
   padding-top: 2rem;
 }
 
@@ -197,8 +195,17 @@
   .navbar-collapse {
     width: 100%;
   }
+
+  .container-fluid {
+    background-color: black;
+  }
+
   #sidebar {
     display: none !important;
+  }
+
+  #nav{
+    background-color: black;
   }
 
   .nav-item{
@@ -431,9 +438,6 @@
   padding: .6rem;
 }
 
-.collapse.navbar-collapse {
-  background-color: black !important;
-}
 .navbar-nav.flex-column .nav-item {
   width: 100%;
 }
