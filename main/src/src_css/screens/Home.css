@@ -13,7 +13,7 @@ body {
   width: 47%;
   box-sizing: border-box;
   /* background-color: bisque; */
-  margin: 1rem;
+  margin: .85rem 1rem;
 }
 
 .top-left{
@@ -78,7 +78,7 @@ body {
 
 .footer{  
   position: sticky;
-  margin-top: 10rem;
+  margin-top: 9rem;
 }
 
 .footer h1{

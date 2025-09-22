@@ -42,7 +42,7 @@ h4 {
 
 body {
   background:
-    radial-gradient(circle at top left, rgba(80, 0, 130, 0.04), transparent 60%),
+    radial-gradient(circle at top left, rgba(80, 0, 130, 0.05), transparent 60%),
     radial-gradient(circle at bottom right, rgba(100, 0, 150, 0.03), transparent 70%),
     linear-gradient(135deg, #000000 0%, rgba(0, 0, 0, 0.95) 100%);
   background-attachment: fixed;
