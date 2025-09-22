@@ -309,8 +309,18 @@
 }
 
 #search-but-user{
-  background-color: #1f1f1f;
-  border: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: rgba(255, 255, 255, 0.9);
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+  box-shadow: 
+        inset 0 0 0.5px rgba(255, 255, 255, 0.3),
+        inset 0 0 5px rgba(255, 255, 255, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.5),
+        0 4px 6px rgba(255, 255, 255, 0.05);
   color: #f6f6f6;
   height: 3.8rem;
   border-radius: 50%;
@@ -327,36 +337,32 @@
 }
 
 #search-form{
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border-radius: 10rem;
-    padding: 1rem;
-    width: 15vw;
-
-    box-shadow:
-        inset 0 0 0.5px rgba(255, 255, 255, 0.25),
-        inset 0 0 6px rgba(255, 255, 255, 0.06),
-        0 6px 10px rgba(0, 0, 0, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 15vw;
+  box-shadow:
+      inset 0 0 0.5px rgba(255, 255, 255, 0.25),
+      inset 0 0 6px rgba(255, 255, 255, 0.06),
+      0 6px 10px rgba(0, 0, 0, 0.5);
   margin-left: .5vw;
 }
 
 #search-form-desk{
   background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-
-    border-radius: 10rem;
-    padding: 1rem;
-    width: 15vw;
-
-    box-shadow:
-        inset 0 0 0.5px rgba(255, 255, 255, 0.25),
-        inset 0 0 6px rgba(255, 255, 255, 0.06),
-        0 6px 10px rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 15vw;
+  box-shadow:
+      inset 0 0 0.5px rgba(255, 255, 255, 0.25),
+      inset 0 0 6px rgba(255, 255, 255, 0.06),
+      0 6px 10px rgba(0, 0, 0, 0.5);
   margin-left: .5vw;
   display: none;
   color: white;
@@ -368,7 +374,17 @@
   padding: 1rem;
   width: 15vw;
   margin-right: 0.5rem;
-  background-color: #1f1f1f;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10rem;
+  padding: 1rem;
+  width: 15vw;
+  box-shadow:
+      inset 0 0 0.5px rgba(255, 255, 255, 0.25),
+      inset 0 0 6px rgba(255, 255, 255, 0.06),
+      0 6px 10px rgba(0, 0, 0, 0.5);
 }
 
 

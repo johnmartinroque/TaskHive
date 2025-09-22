@@ -28,6 +28,8 @@ h5 {
   z-index: 2000;
   width: 26rem;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .chat-toggle-btn {
@@ -164,24 +166,26 @@ h5 {
 }
 
 @media (max-width: 991px) {
-  .group-detailed-wrapper {
-    padding: 1rem;
-  }
+.group-detailed-wrapper {
+  padding: 1rem;
+}
 
-  h1 {
-    font-size: 1.6rem;
-    text-align: center;
-  }
+h1 {
+  font-size: 1.6rem;
+  text-align: center;
+}
 
-  #buttones h4 {
-    font-size: 1rem;
-  }
+#buttones h4 {
+  font-size: 1rem;
+}
 
-  .chat-wrapper {
-    left: 50%;
-    right: auto;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 100%;
-  }
+.chat-wrapper {
+  left: 50%;
+  right: auto;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 100%;
+  display: flex;
+  justify-content: center;
+}
 }

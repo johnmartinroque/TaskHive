@@ -46,7 +46,7 @@ function FinishedTasks() {
       <div className="row justify-content-end">
         {finishedTasks.map((task) => (
           <Link to={`/tasks/${task.id}`} key={task.id} className="col-md-6 mb-4 d-flex justify-content-end task-link">
-            <Card className="p-3 w-100" style={{ backgroundColor: "#1f1f1f", boxShadow: "inset 0px -2px 6px -2px rgba(0, 0, 0, 0.26)", }}>
+            <Card className="p-3 w-100" style={{ background: "rgba(255,255,255, 0.05)", backdropFilter: "blur(8px)",WebkitBackdropFilter: "blur(8px)",border: "1px solid rgba(255, 255, 255, 0.15)",boxShadow:"inset 0 0 0.5px rgba(255, 255, 255, 0.25), inset 0 0 5px rgba(255, 255, 255, 0.06), 0 8px 16px rgba(0, 0, 0, 0.4), 0 4px 6px rgba(255, 255, 255, 0.03)", }}>
               <h4 style = {{overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap"}}>
                 {task.name}
               </h4>
